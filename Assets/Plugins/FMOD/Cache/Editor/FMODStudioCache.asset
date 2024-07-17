@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../../GWNU2_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638568203193887611
+  lastModified: 638568255534348552
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -41,7 +41,7 @@ MonoBehaviour:
   - {fileID: -8568004290532239870}
   StringsBanks:
   - {fileID: 8344402122014236724}
-  cacheTime: 638568203193901532
+  cacheTime: 638568255534359269
   cacheVersion: 131619
 --- !u!114 &8344402122014236724
 MonoBehaviour:
@@ -58,7 +58,7 @@ MonoBehaviour:
   Path: ../../GWNU2_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638568203193901532
+  lastModified: 638568255534359269
   FileSizes:
   - Name: Desktop
     Value: 712
