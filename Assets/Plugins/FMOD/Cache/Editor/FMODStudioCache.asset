@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8568004290532239870
+--- !u!114 &-7032254380442379217
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,17 +9,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BackgroundMusic
   m_EditorClassIdentifier: 
-  Path: ../../GWNU2_FMOD/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638568255534348552
-  FileSizes:
-  - Name: Desktop
-    Value: 1036
-  Exists: 1
+  Path: event:/BackgroundMusic
+  Guid:
+    Data1: -1119199545
+    Data2: 1309737297
+    Data3: 686370462
+    Data4: 600315928
+  Banks:
+  - {fileID: 1487655948201695567}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 72000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33,17 +40,38 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 8344402122014236724}
-  - {fileID: -8568004290532239870}
-  EditorEvents: []
+  - {fileID: 2191131481088343439}
+  - {fileID: 1487655948201695567}
+  EditorEvents:
+  - {fileID: -7032254380442379217}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -8568004290532239870}
+  - {fileID: 1487655948201695567}
   StringsBanks:
-  - {fileID: 8344402122014236724}
-  cacheTime: 638568255534359269
+  - {fileID: 2191131481088343439}
+  cacheTime: 638568475146544494
   cacheVersion: 131619
---- !u!114 &8344402122014236724
+--- !u!114 &1487655948201695567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod_GWNU_GAME_02/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638568475146534499
+  FileSizes:
+  - Name: Desktop
+    Value: 1218304
+  Exists: 1
+--- !u!114 &2191131481088343439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,11 +83,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: ../../GWNU2_FMOD/Build/Desktop/Master.strings.bank
+  Path: Fmod_GWNU_GAME_02/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638568255534359269
+  lastModified: 638568475146544494
   FileSizes:
   - Name: Desktop
-    Value: 712
+    Value: 764
   Exists: 1

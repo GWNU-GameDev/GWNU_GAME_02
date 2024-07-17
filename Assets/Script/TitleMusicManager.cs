@@ -4,7 +4,7 @@ using FMODUnity;
 public class TitleMusicManager : MonoBehaviour
 {
     [SerializeField]
-    private string musicEventPath = "event:/BackgroundMusic";  // FMOD에서 설정한 배경음악 이벤트의 경로
+    private string musicEventPath = "event:/BackgroundMusic";
 
     private FMOD.Studio.EventInstance musicEvent;
 

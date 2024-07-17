@@ -925,7 +925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb23e074d72648b2aa42070d21cf1ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicEventPath: 
+  musicEventPath: event:/BackgroundMusic
 --- !u!114 &1688376778
 MonoBehaviour:
   m_ObjectHideFlags: 0
