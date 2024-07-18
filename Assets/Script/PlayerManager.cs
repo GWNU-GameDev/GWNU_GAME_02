@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Ctrl : MonoBehaviour
+public class PlayerManager : MonoBehaviour
 {
     [Header("Rotate")]
     public float mouseSpeed = 100f;
