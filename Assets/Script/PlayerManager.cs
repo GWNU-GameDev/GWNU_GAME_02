@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
     float yRotation;
     float xRotation;
     Camera cam;
+    Transform head;
 
     void Start()
     {
@@ -31,10 +32,9 @@ public class PlayerManager : MonoBehaviour
         yRotation += mouseX;    // 마우스 X축 입력에 따라 수평 회전 값을 조정
         xRotation -= mouseY;    // 마우스 Y축 입력에 따라 수직 회전 값을 조정
 
-        yRotation = Mathf.Clamp(yRotation, -70f, 70f);  // 수평 회전 값을 -70도에서 70도 사이로 제한
-        xRotation = Mathf.Clamp(xRotation, -70f, 70f);  // 수직 회전 값을 -70도에서 70도 사이로 제한
+        yRotation = Mathf.Clamp(yRotation, -60f, 60f);  // 수평 회전 값을 -70도에서 70도 사이로 제한
+        xRotation = Mathf.Clamp(xRotation, -30f, 30f);  // 수직 회전 값을 -70도에서 70도 사이로 제한
 
         cam.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0); // 카메라의 회전을 조절
-        transform.rotation = Quaternion.Euler(0, yRotation, 0);             // 플레이어 캐릭터의 회전을 조절
     }
 }
