@@ -1354,7 +1354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSpeed: 100
   rotationAngle: 50
-  rotationSpeed: 20
+  rotationSpeed: 30
   delayBeforeStart: 0
 --- !u!1001 &976867676
 PrefabInstance:
