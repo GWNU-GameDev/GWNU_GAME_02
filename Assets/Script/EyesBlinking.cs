@@ -6,7 +6,7 @@ public class EyesBlinking : MonoBehaviour
 {
     public Animator animator;
     private bool eyesClosed = false;
-
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
