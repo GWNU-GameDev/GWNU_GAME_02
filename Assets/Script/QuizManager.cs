@@ -8,7 +8,7 @@ public class QuizManager : MonoBehaviour
     public GameObject quizPanel; // 퀴즈 패널
     public List<Image> quizImages; // 퀴즈 이미지들
     public List<Sprite> imageOptions; // 이미지 옵션들
-    public float changeInterval = 2.0f; // 이미지 변경 간격 (초 단위)
+    //public float changeInterval = 2.0f; // 이미지 변경 간격 (초 단위)
     public int correctAnswerIndex = -1; // 정답 인덱스 (-1이면 랜덤으로 설정)
     private bool quizActive = false;
 
