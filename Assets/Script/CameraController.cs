@@ -35,7 +35,7 @@ public class CameraController : MonoBehaviour
             Rotate();
         }
     }
-    
+
     void Rotate()
     {
         float mouseX = Input.GetAxisRaw("Mouse X") * mouseSpeed * Time.deltaTime;

@@ -8,7 +8,7 @@ public class QuizManager : MonoBehaviour
     public GameObject quizPanel; // 퀴즈 패널
     public List<Image> quizImages; // 퀴즈 이미지들
     public List<Sprite> imageOptions; // 이미지 옵션들
-    //public float changeInterval = 2.0f; // 이미지 변경 간격 (초 단위)
+    public List<int> imageIndices; // 각 이미지 위치에 대한 인덱스
     public int correctAnswerIndex = -1; // 정답 인덱스 (-1이면 랜덤으로 설정)
     private bool quizActive = false;
 
@@ -23,7 +23,7 @@ public class QuizManager : MonoBehaviour
         {
             StartQuiz();
         }
-        
+
         if (quizActive)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -54,6 +54,12 @@ public class QuizManager : MonoBehaviour
             return;
         }
 
+        if (imageIndices.Count != quizImages.Count)
+        {
+            Debug.LogError("Image indices count must match quiz images count.");
+            return;
+        }
+
         quizPanel.SetActive(true);
         quizActive = true;
         SetQuizImages();
@@ -62,15 +68,22 @@ public class QuizManager : MonoBehaviour
     // 퀴즈 이미지를 설정하는 메서드
     void SetQuizImages()
     {
+        for (int i = 0; i < quizImages.Count; i++)
+        {
+            int imageIndex = imageIndices[i];
+            if (imageIndex >= 0 && imageIndex < imageOptions.Count)
+            {
+                quizImages[i].sprite = imageOptions[imageIndex];
+            }
+            else
+            {
+                Debug.LogError("Invalid image index: " + imageIndex);
+            }
+        }
+
         if (correctAnswerIndex < 0 || correctAnswerIndex >= quizImages.Count)
         {
             correctAnswerIndex = Random.Range(0, quizImages.Count); // 정답 인덱스 랜덤 설정
-        }
-        
-        for (int i = 0; i < quizImages.Count; i++)
-        {
-            int randomIndex = Random.Range(0, imageOptions.Count);
-            quizImages[i].sprite = imageOptions[randomIndex];
         }
     }
 

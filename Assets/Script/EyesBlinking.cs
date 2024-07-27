@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EyesBlinking : MonoBehaviour
@@ -44,12 +43,17 @@ public class EyesBlinking : MonoBehaviour
         yield return new WaitForSeconds(1.5f); // 눈을 감은 상태로 대기 (1.5초 대기)
         // 눈을 뜨는 애니메이션을 재생합니다.
         animator.SetTrigger("EyesOpen");
-        
+
         yield return new WaitForSeconds(3.0f);
         // 눈을 감는 애니메이션을 재생합니다.
         animator.SetTrigger("EyesClose");
         yield return new WaitForSeconds(1.5f); // 눈을 감은 상태로 대기 (1.5초 대기)
         // 눈을 뜨는 애니메이션을 재생합니다.
         animator.SetTrigger("EyesOpen");
+    }
+
+    public bool IsEyesClosed()
+    {
+        return eyesClosed;
     }
 }

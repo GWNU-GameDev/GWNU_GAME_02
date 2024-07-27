@@ -1010,9 +1010,10 @@ GameObject:
   - component: {fileID: 666997406}
   - component: {fileID: 666997405}
   - component: {fileID: 666997404}
+  - component: {fileID: 666997408}
   m_Layer: 5
   m_Name: ImagePlayer
-  m_TagString: Untagged
+  m_TagString: ImagePanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1101,6 +1102,27 @@ RectTransform:
   m_AnchoredPosition: {x: -16.07, y: 2}
   m_SizeDelta: {x: 3.84, y: 2.16}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!65 &666997408
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666997403}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4, y: 2, z: 1}
+  m_Center: {x: -0.019260406, y: 0.03581941, z: -0.09610784}
 --- !u!1001 &673548016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1376,6 +1398,7 @@ GameObject:
   - component: {fileID: 963194230}
   - component: {fileID: 963194231}
   - component: {fileID: 963194232}
+  - component: {fileID: 963194233}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1508,10 +1531,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c467fdceb7b44d5d9fd724861814345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSpeed: 100
+  mouseSpeed: 200
   rotationAngle: 50
   rotationSpeed: 30
   delayBeforeStart: 0
+--- !u!114 &963194233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1be1341e2efb8845b90fec5cd011ebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mentalHealthManager: {fileID: 1419131142}
+  eyesBlinking: {fileID: 1117296148}
+  targetTag: ImagePanel
+  decreaseInterval: 1
 --- !u!1001 &976867676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1779,7 +1818,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 22e428dde7fab4b77a7d932e333f75b1, type: 3}
   - {fileID: 21300000, guid: 223d6d1df7a9148babfa006291aac447, type: 3}
   - {fileID: 21300000, guid: 1efa2253dfa844669bb4faf236e849ec, type: 3}
-  changeInterval: 2
+  imageIndices: 03000000020000000100000000000000
   correctAnswerIndex: 0
 --- !u!1 &1117296143
 GameObject:
@@ -1796,7 +1835,7 @@ GameObject:
   - component: {fileID: 1117296148}
   m_Layer: 5
   m_Name: EyesLids
-  m_TagString: Untagged
+  m_TagString: EyePanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2467,6 +2506,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7220721102344792952, guid: 7e0e38b7674bc4a4d91f6b36f1161837, type: 3}
   m_PrefabInstance: {fileID: 1408030558}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1419131141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1419131143}
+  - component: {fileID: 1419131142}
+  m_Layer: 0
+  m_Name: MentalHealthManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1419131142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419131141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf27a2d7cbf6fe4a8c4fb1557a36fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMentalHealth: 100
+  decreaseRate: 1
+--- !u!4 &1419131143
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419131141}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.282273, y: -2.601273, z: 5.3822885}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1480280811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3879,7 +3964,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 5
+  m_Range: 4
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -4019,3 +4104,4 @@ SceneRoots:
   - {fileID: 1727458912}
   - {fileID: 1117296147}
   - {fileID: 1072855981}
+  - {fileID: 1419131143}
