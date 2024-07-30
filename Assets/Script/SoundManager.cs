@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
+using FMOD.Studio;
 
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
+    private Bus masterBus;
+    private float previousVolume = 1f;
+    private bool isMuted = false;
 
     private void Awake()
     {
@@ -19,6 +23,8 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        masterBus = RuntimeManager.GetBus("bus:/");
     }
 
     // 사운드 이벤트 재생
@@ -34,13 +40,19 @@ public class SoundManager : MonoBehaviour
     }
 
     // 사운드 이벤트 볼륨 조절
-    public void SetVolume(FMOD.Studio.EventInstance soundEvent, float volume)
+    public void SetVolume(EventInstance soundEvent, float volume)
     {
         soundEvent.setVolume(volume);
     }
 
+    // 마스터 볼륨 조절
+    public void SetMasterVolume(float volume)
+    {
+        masterBus.setVolume(volume);
+    }
+
     // 사운드 이벤트 중지
-    public void StopSound(FMOD.Studio.EventInstance soundEvent, bool immediate = false)
+    public void StopSound(EventInstance soundEvent, bool immediate = false)
     {
         if (immediate)
         {
@@ -50,5 +62,21 @@ public class SoundManager : MonoBehaviour
         {
             soundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
+    }
+
+    // 음소거 토글 (볼륨 0으로 설정)
+    public void ToggleMute()
+    {
+        if (isMuted)
+        {
+            masterBus.setVolume(previousVolume);
+        }
+        else
+        {
+            masterBus.getVolume(out previousVolume);
+            masterBus.setVolume(0f);
+        }
+
+        isMuted = !isMuted;
     }
 }

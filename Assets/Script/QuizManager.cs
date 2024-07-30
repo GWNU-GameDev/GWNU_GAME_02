@@ -62,6 +62,7 @@ public class QuizManager : MonoBehaviour
 
         quizPanel.SetActive(true);
         quizActive = true;
+        Time.timeScale = 0f; // 게임을 일시정지
         SetQuizImages();
     }
 
@@ -100,5 +101,6 @@ public class QuizManager : MonoBehaviour
         }
         quizActive = false;
         quizPanel.SetActive(false);
+        Time.timeScale = 1f; // 게임을 재개
     }
 }
