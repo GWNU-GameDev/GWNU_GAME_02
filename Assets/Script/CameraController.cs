@@ -4,7 +4,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [Header("Rotate")]
-    public float mouseSpeed = 100f;
+    public float mouseSpeed = 400f; // 기본값을 400으로 설정
     public float rotationAngle = 50.0f;
     public float rotationSpeed = 20.0f;
     public float delayBeforeStart = 5.0f;
@@ -87,5 +87,10 @@ public class CameraController : MonoBehaviour
         }
 
         transform.rotation = endRotation;
+    }
+
+    public void SetMouseSpeed(float speed)
+    {
+        mouseSpeed = speed;
     }
 }
