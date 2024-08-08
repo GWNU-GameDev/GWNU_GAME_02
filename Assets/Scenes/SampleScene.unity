@@ -1106,17 +1106,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7220721102344792952, guid: 7e0e38b7674bc4a4d91f6b36f1161837, type: 3}
   m_PrefabInstance: {fileID: 673548016}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &725896141 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8929607117951556420, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
-  m_PrefabInstance: {fileID: 9120639241847467643}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &735025792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1611,17 +1600,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043042793}
   m_CullTransparentMesh: 1
---- !u!114 &1043967366 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3166850093162131183, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
-  m_PrefabInstance: {fileID: 9120639241847467643}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1048930791 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3144607138621637476, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
@@ -2619,17 +2597,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7220721102344792952, guid: 7e0e38b7674bc4a4d91f6b36f1161837, type: 3}
   m_PrefabInstance: {fileID: 1617093707}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1662429263 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9110735932028164720, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
-  m_PrefabInstance: {fileID: 9120639241847467643}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1666508215
 GameObject:
   m_ObjectHideFlags: 0
@@ -3192,17 +3159,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicEventPath: event:/BackgroundMusic
---- !u!114 &2076015751 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9118220924719526252, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
-  m_PrefabInstance: {fileID: 9120639241847467643}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2079137339
 GameObject:
   m_ObjectHideFlags: 0
@@ -3385,19 +3341,19 @@ PrefabInstance:
     - target: {fileID: 1463741468962225096, guid: 67eb23156c6faa142a94aadd45f2f684, type: 3}
       propertyPath: quizImages.Array.data[0]
       value: 
-      objectReference: {fileID: 725896141}
+      objectReference: {fileID: 0}
     - target: {fileID: 1463741468962225096, guid: 67eb23156c6faa142a94aadd45f2f684, type: 3}
       propertyPath: quizImages.Array.data[1]
       value: 
-      objectReference: {fileID: 1662429263}
+      objectReference: {fileID: 0}
     - target: {fileID: 1463741468962225096, guid: 67eb23156c6faa142a94aadd45f2f684, type: 3}
       propertyPath: quizImages.Array.data[2]
       value: 
-      objectReference: {fileID: 1043967366}
+      objectReference: {fileID: 0}
     - target: {fileID: 1463741468962225096, guid: 67eb23156c6faa142a94aadd45f2f684, type: 3}
       propertyPath: quizImages.Array.data[3]
       value: 
-      objectReference: {fileID: 2076015751}
+      objectReference: {fileID: 0}
     - target: {fileID: 2277200833082773758, guid: 67eb23156c6faa142a94aadd45f2f684, type: 3}
       propertyPath: m_Name
       value: QuizManager
@@ -3548,6 +3504,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2943155420213884786, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3760451342680845844, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3633,6 +3593,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4741141372969860037, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741141372969860037, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -3645,7 +3609,15 @@ PrefabInstance:
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8499105578590720364, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499105578590720364, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499105578590720364, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -3835,6 +3807,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SelectQz
       objectReference: {fileID: 0}
+    - target: {fileID: 1028447171782247635, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1938286085496779901, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3914,6 +3890,10 @@ PrefabInstance:
     - target: {fileID: 1938286085496779901, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865337408452101922, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
