@@ -66,3 +66,4 @@ public class ImageManager : MonoBehaviour
             yield return new WaitForSeconds(changeInterval);
         }
     }
+}
