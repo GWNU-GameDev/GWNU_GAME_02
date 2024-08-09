@@ -1,20 +1,41 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class QuizManager : MonoBehaviour
 {
-    public GameObject quizPanel; // 퀴즈 패널
-    public List<Image> quizImages; // 퀴즈 이미지들
-    public List<Sprite> imageOptions; // 이미지 옵션들
-    public List<int> imageIndices; // 각 이미지 위치에 대한 인덱스
-    public int correctAnswerIndex = -1; // 정답 인덱스 (-1이면 랜덤으로 설정)
+    [Serializable]
+    public class QuizItem
+    {
+        public string question;
+        public string correctAnswer;
+        public string[] wrongAnswers = new string[3];
+    }
+
+    public GameObject quizPanel;
+    public TextMeshProUGUI questionText;
+    public TextMeshProUGUI[] answerTexts; // 4개의 TMP 텍스트 요소를 위한 배열
+    public List<QuizItem> quizzes = new List<QuizItem>();
+
+    private int correctAnswerIndex = -1;
     private bool quizActive = false;
+    private List<int> unusedQuizIndices = new List<int>();
 
     void Start()
     {
-        quizPanel.SetActive(false); // 시작할 때 퀴즈 패널 비활성화
+        quizPanel.SetActive(false);
+        InitializeQuizIndices();
+    }
+
+    void InitializeQuizIndices()
+    {
+        unusedQuizIndices.Clear();
+        for (int i = 0; i < quizzes.Count; i++)
+        {
+            unusedQuizIndices.Add(i);
+        }
     }
 
     void Update()
@@ -26,69 +47,62 @@ public class QuizManager : MonoBehaviour
 
         if (quizActive)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            for (int i = 0; i < 4; i++)
             {
-                CheckAnswer(0);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                CheckAnswer(1);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                CheckAnswer(2);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                CheckAnswer(3);
+                if (Input.GetKeyDown(KeyCode.Alpha1 + i))
+                {
+                    CheckAnswer(i);
+                }
             }
         }
     }
 
-    // 퀴즈를 시작하는 메서드
     public void StartQuiz()
     {
-        if (quizPanel == null)
+        if (quizPanel == null || unusedQuizIndices.Count == 0)
         {
-            Debug.LogError("Quiz panel is not assigned.");
-            return;
-        }
-
-        if (imageIndices.Count != quizImages.Count)
-        {
-            Debug.LogError("Image indices count must match quiz images count.");
+            Debug.LogError("Quiz panel is not assigned or all questions have been used.");
             return;
         }
 
         quizPanel.SetActive(true);
         quizActive = true;
-        Time.timeScale = 0f; // 게임을 일시정지
-        SetQuizImages();
+        Time.timeScale = 0f;
+        SetRandomQuiz();
     }
 
-    // 퀴즈 이미지를 설정하는 메서드
-    void SetQuizImages()
+    void SetRandomQuiz()
     {
-        for (int i = 0; i < quizImages.Count; i++)
+        int quizRandomIndex = UnityEngine.Random.Range(0, unusedQuizIndices.Count);
+        int quizIndex = unusedQuizIndices[quizRandomIndex];
+        QuizItem currentQuiz = quizzes[quizIndex];
+
+        questionText.text = currentQuiz.question;
+
+        List<string> allAnswers = new List<string> { currentQuiz.correctAnswer };
+        allAnswers.AddRange(currentQuiz.wrongAnswers);
+
+        // 답변 옵션들을 섞습니다
+        for (int i = 0; i < allAnswers.Count; i++)
         {
-            int imageIndex = imageIndices[i];
-            if (imageIndex >= 0 && imageIndex < imageOptions.Count)
+            string temp = allAnswers[i];
+            int shuffleIndex = UnityEngine.Random.Range(i, allAnswers.Count);
+            allAnswers[i] = allAnswers[shuffleIndex];
+            allAnswers[shuffleIndex] = temp;
+        }
+
+        for (int i = 0; i < answerTexts.Length; i++)
+        {
+            answerTexts[i].text = $"{i + 1}. {allAnswers[i]}";
+            if (allAnswers[i] == currentQuiz.correctAnswer)
             {
-                quizImages[i].sprite = imageOptions[imageIndex];
-            }
-            else
-            {
-                Debug.LogError("Invalid image index: " + imageIndex);
+                correctAnswerIndex = i;
             }
         }
 
-        if (correctAnswerIndex < 0 || correctAnswerIndex >= quizImages.Count)
-        {
-            correctAnswerIndex = Random.Range(0, quizImages.Count); // 정답 인덱스 랜덤 설정
-        }
+        unusedQuizIndices.RemoveAt(quizRandomIndex);
     }
 
-    // 정답을 확인하는 메서드
     void CheckAnswer(int selectedAnswerIndex)
     {
         if (selectedAnswerIndex == correctAnswerIndex)
@@ -99,8 +113,15 @@ public class QuizManager : MonoBehaviour
         {
             Debug.Log("Wrong!");
         }
+
         quizActive = false;
         quizPanel.SetActive(false);
-        Time.timeScale = 1f; // 게임을 재개
+        Time.timeScale = 1f;
+
+        if (unusedQuizIndices.Count == 0)
+        {
+            Debug.Log("All questions have been used. Resetting the quiz.");
+            InitializeQuizIndices();
+        }
     }
 }
