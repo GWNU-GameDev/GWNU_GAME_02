@@ -1985,6 +1985,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7220721102344792952, guid: 7e0e38b7674bc4a4d91f6b36f1161837, type: 3}
   m_PrefabInstance: {fileID: 1202793435}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1216124641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2277200833082773758, guid: 67eb23156c6faa142a94aadd45f2f684, type: 3}
+  m_PrefabInstance: {fileID: 838709735726032257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1216124644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216124641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee911852d67c4606b0a209360fe81dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelImage: {fileID: 1666508218}
+  changeInterval: 15
+  imageQuizItems:
+  - image: {fileID: 21300000, guid: ccb8e9f45f02649a1af8f56043b3d3a2, type: 3}
+    question: face?!
+    correctAnswer: Creak
+    wrongAnswers:
+    - cute
+    - smooth
+    - hole
+  - image: {fileID: 21300000, guid: 22e428dde7fab4b77a7d932e333f75b1, type: 3}
+    question: face?!
+    correctAnswer: big mouse
+    wrongAnswers:
+    - cute
+    - smooth
+    - hole
+  - image: {fileID: 21300000, guid: 223d6d1df7a9148babfa006291aac447, type: 3}
+    question: face?!
+    correctAnswer: smile
+    wrongAnswers:
+    - cute
+    - smooth
+    - hole
+  - image: {fileID: 21300000, guid: 1efa2253dfa844669bb4faf236e849ec, type: 3}
+    question: face?!
+    correctAnswer: hole
+    wrongAnswers:
+    - cute
+    - smooth
+    - creak
+  - image: {fileID: 21300000, guid: fe26aceab018fae44a47021bbff6a4ef, type: 3}
+    question: face?!
+    correctAnswer: cute
+    wrongAnswers:
+    - bad
+    - smooth
+    - hole
 --- !u!4 &1260591202 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 06249c069b5716a45be88781f9eaac1b, type: 3}
@@ -2704,7 +2759,6 @@ GameObject:
   - component: {fileID: 1666508216}
   - component: {fileID: 1666508219}
   - component: {fileID: 1666508218}
-  - component: {fileID: 1666508217}
   m_Layer: 5
   m_Name: ImagePanel
   m_TagString: Untagged
@@ -2731,26 +2785,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1666508217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1666508215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ee911852d67c4606b0a209360fe81dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panelImage: {fileID: 1666508218}
-  imageList:
-  - {fileID: 21300000, guid: ccb8e9f45f02649a1af8f56043b3d3a2, type: 3}
-  - {fileID: 21300000, guid: 22e428dde7fab4b77a7d932e333f75b1, type: 3}
-  - {fileID: 21300000, guid: 223d6d1df7a9148babfa006291aac447, type: 3}
-  - {fileID: 21300000, guid: 1efa2253dfa844669bb4faf236e849ec, type: 3}
-  - {fileID: 21300000, guid: fe26aceab018fae44a47021bbff6a4ef, type: 3}
-  changeInterval: 15
 --- !u!114 &1666508218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3610,7 +3644,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2277200833082773758, guid: 67eb23156c6faa142a94aadd45f2f684, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1216124644}
   m_SourcePrefab: {fileID: 100100000, guid: 67eb23156c6faa142a94aadd45f2f684, type: 3}
 --- !u!1001 &3076000216382421272
 PrefabInstance:
@@ -4015,6 +4052,10 @@ PrefabInstance:
     - target: {fileID: 212740693020055015, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
       propertyPath: m_Name
       value: SelectQz
+      objectReference: {fileID: 0}
+    - target: {fileID: 212740693020055015, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1028447171782247635, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
       propertyPath: m_Mesh
