@@ -49,7 +49,7 @@ MonoBehaviour:
   - {fileID: 1487655948201695567}
   StringsBanks:
   - {fileID: 2191131481088343439}
-  cacheTime: 638580564792135440
+  cacheTime: 638568526101615994
   cacheVersion: 131619
 --- !u!114 &1487655948201695567
 MonoBehaviour:
@@ -66,7 +66,7 @@ MonoBehaviour:
   Path: Fmod_GWNU_GAME_02/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638580564792135440
+  lastModified: 638568526101610695
   FileSizes:
   - Name: Desktop
     Value: 1218304
@@ -86,7 +86,7 @@ MonoBehaviour:
   Path: Fmod_GWNU_GAME_02/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638580564792135440
+  lastModified: 638568526101615994
   FileSizes:
   - Name: Desktop
     Value: 764

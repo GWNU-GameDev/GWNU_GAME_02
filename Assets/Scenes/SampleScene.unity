@@ -2005,41 +2005,246 @@ MonoBehaviour:
   panelImage: {fileID: 1666508218}
   changeInterval: 15
   imageQuizItems:
-  - image: {fileID: 21300000, guid: ccb8e9f45f02649a1af8f56043b3d3a2, type: 3}
-    question: face?!
-    correctAnswer: Creak
-    wrongAnswers:
-    - cute
-    - smooth
-    - hole
-  - image: {fileID: 21300000, guid: 22e428dde7fab4b77a7d932e333f75b1, type: 3}
-    question: face?!
-    correctAnswer: big mouse
-    wrongAnswers:
-    - cute
-    - smooth
-    - hole
-  - image: {fileID: 21300000, guid: 223d6d1df7a9148babfa006291aac447, type: 3}
-    question: face?!
-    correctAnswer: smile
-    wrongAnswers:
-    - cute
-    - smooth
-    - hole
-  - image: {fileID: 21300000, guid: 1efa2253dfa844669bb4faf236e849ec, type: 3}
-    question: face?!
-    correctAnswer: hole
-    wrongAnswers:
-    - cute
-    - smooth
-    - creak
-  - image: {fileID: 21300000, guid: fe26aceab018fae44a47021bbff6a4ef, type: 3}
-    question: face?!
-    correctAnswer: cute
-    wrongAnswers:
-    - bad
-    - smooth
-    - hole
+  - image: {fileID: 21300000, guid: 5d6d6a1c6a5dd49ea9b95074b764b7ca, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 81dfbf86576cc4cbe9e8858a87b2e3ba, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 2a52e6ad8d1db48fd93224af025b683a, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: edc5be386421240f1a3f54dd06e05768, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 42a59c7da25754128b899bc0a24b52d8, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 2392f50f053fc457f9940ecba61adf62, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: cdf68d2e75b98489097c41d8b463ee6c, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: a6888eb4409964467879b1597d7f6189, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 00c798b1af6eb45d997b0ac5ef0b03cc, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: b0e3b4c59425449e1bc148b347fdd6fb, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 88a2fef41b3e34a86944b032c8c216e1, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: bc28061cb10b74618852beb774650e76, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 875adead272164d43987fd6511eede90, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 183eb63379d414e8e81de9c6b6610369, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: b97ee3a5dc14d4720a7e78c2064604f3, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 7c85ce07d426c4693ae9fe12daa4daf8, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 7affac692609d41aea0a25749e1b3792, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: f860152ee77294d949e00d28d4a3c831, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 348eb6cf585e34f8fb527591d0313149, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: b9ba6130a7fa04343a94edb9adffd524, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: a5907edd66d0a4199b79cd464f663cab, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 4e8d68056b9d04386be2727a87257377, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 7e627643229854c698a317eb9f23f642, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 0530646cc6dc0431dbb39e01d3d6e90f, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 00bd434bbb4374e81b160b236e9943ee, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 6d77281b3aa484fb6b443dcef4397c00, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 62a7d52a86fed47c98833c4c09353c6f, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 125279bb944694efb82a2ac7df395d22, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 2363f151e4c304f228231e7f6793b480, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: e055f5abbee094eb1ab7078a153a35a8, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 7c16810e7f5eb4e09b1b8c978ca2b0dc, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: a517c8e211ba84f10a1497c2e6595a19, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 31fbcb5d5c9134a59a6851193afe00b8, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 1a445ca217595400f9bc98a622d40a96, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 10a26a2455bc54852ab9c8f1f3a6ad35, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 80dd1012ce9af428fb52f52d2fe50f07, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 3675235d29bf644b9a6f7249cb57045e, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: 61b1f7ec2652c4df787b5d33dd226cb7, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: d6a1b9e7cd8404659b5fdb5c08778c67, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
+  - image: {fileID: 21300000, guid: fb0ce9fe12aaa48cf8d80bf11363eb98, type: 3}
+    question: 
+    correctAnswer: 
+    wrongAnswers: []
+    baseWeight: 0
+    currentWeight: 0
 --- !u!4 &1260591202 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 06249c069b5716a45be88781f9eaac1b, type: 3}

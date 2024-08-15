@@ -11,7 +11,7 @@ public class QuizManager : MonoBehaviour
     public TextMeshProUGUI questionText;
     public TextMeshProUGUI[] answerTexts;
 
-    private List<ImageQuizItem> currentQuizItems;
+    private List<WeightedImageQuizItem> currentQuizItems;
     private int currentQuizIndex = 0;
     private int correctAnswerIndex = -1;
     private bool quizActive = false;
@@ -34,7 +34,6 @@ public class QuizManager : MonoBehaviour
 
     private void Start()
     {
-        // 시작 시 퀴즈 패널을 숨깁니다.
         if (quizPanel != null)
         {
             quizPanel.SetActive(false);
@@ -45,13 +44,12 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    public void StartQuiz(List<ImageQuizItem> quizItems)
+    public void StartQuiz(List<WeightedImageQuizItem> quizItems)
     {
         currentQuizItems = quizItems;
         currentQuizIndex = 0;
         quizActive = true;
 
-        // 퀴즈 시작 시 패널을 활성화합니다.
         if (quizPanel != null)
         {
             quizPanel.SetActive(true);
@@ -67,7 +65,7 @@ public class QuizManager : MonoBehaviour
     {
         if (currentQuizIndex < currentQuizItems.Count)
         {
-            ImageQuizItem currentQuiz = currentQuizItems[currentQuizIndex];
+            WeightedImageQuizItem currentQuiz = currentQuizItems[currentQuizIndex];
             questionText.text = currentQuiz.question;
 
             List<string> allAnswers = new List<string> { currentQuiz.correctAnswer };
@@ -117,7 +115,6 @@ public class QuizManager : MonoBehaviour
     {
         quizActive = false;
 
-        // 퀴즈 종료 시 패널을 비활성화합니다.
         if (quizPanel != null)
         {
             quizPanel.SetActive(false);
@@ -140,7 +137,7 @@ public class QuizManager : MonoBehaviour
         while (n > 1)
         {
             n--;
-            int k = UnityEngine.Random.Range(0, n + 1);
+            int k = Random.Range(0, n + 1);
             T value = list[k];
             list[k] = list[n];
             list[n] = value;

@@ -3,9 +3,24 @@ using UnityEngine;
 
 public class MentalHealthManager : MonoBehaviour
 {
-    public int maxMentalHealth = 100; // 최대 정신력
-    public int decreaseRate = 1; // 감소율 (초당 감소할 정신력 양)
+    public static MentalHealthManager Instance { get; private set; }
+
+    public int maxMentalHealth = 100;
+    public int decreaseRate = 1;
     private int currentMentalHealth;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
@@ -25,11 +40,16 @@ public class MentalHealthManager : MonoBehaviour
         {
             currentMentalHealth = 0;
         }
-        UpdateMentalHealthUI(); // 정신력 감소 시마다 업데이트
+        UpdateMentalHealthUI(); 
     }
 
     public bool IsMentalHealthDepleted()
     {
         return currentMentalHealth <= 0;
+    }
+
+    public float GetMentalHealthPercentage()
+    {
+        return (float)currentMentalHealth / maxMentalHealth;
     }
 }
