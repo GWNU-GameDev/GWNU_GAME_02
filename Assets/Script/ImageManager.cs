@@ -14,6 +14,7 @@ public class WeightedImageQuizItem
     public string[] wrongAnswers;
     public float baseWeight = 1f;
     [HideInInspector] public float currentWeight;
+    [HideInInspector] public int sequenceNumber; // 이미지의 실제 순서를 저장할 필드
 }
 
 public class ImageManager : MonoBehaviour
@@ -27,6 +28,7 @@ public class ImageManager : MonoBehaviour
     private List<WeightedImageQuizItem> unusedItems;
     private int imagesShownCount = 0;
     private const int ImagesPerRound = 5;
+    private List<WeightedImageQuizItem> shownImages = new List<WeightedImageQuizItem>(); // 보여진 이미지들을 순서대로 저장할 리스트
 
     private void Awake()
     {
@@ -82,10 +84,9 @@ public class ImageManager : MonoBehaviour
             List<WeightedImageQuizItem> roundItems = GetRandomWeightedItems(ImagesPerRound);
             yield return StartCoroutine(ShowImages(roundItems));
 
-            List<WeightedImageQuizItem> quizItems = GetRandomWeightedItems(3, roundItems);
             if (QuizManager.Instance != null)
             {
-                QuizManager.Instance.StartQuiz(quizItems);
+                QuizManager.Instance.StartQuiz(shownImages);
                 yield return new WaitUntil(() => !QuizManager.Instance.IsQuizActive());
             }
             else
@@ -93,17 +94,23 @@ public class ImageManager : MonoBehaviour
                 Debug.LogError("QuizManager instance is null.");
                 yield break;
             }
+
+            // 라운드가 끝나면 shownImages 리스트를 초기화
+            shownImages.Clear();
         }
         Debug.Log("모든 이미지를 보여주었습니다. 프로그램을 종료합니다.");
     }
 
     private IEnumerator ShowImages(List<WeightedImageQuizItem> items)
     {
-        foreach (var item in items)
+        for (int i = 0; i < items.Count; i++)
         {
+            var item = items[i];
             if (panelImage != null && item.image != null)
             {
                 panelImage.sprite = item.image;
+                item.sequenceNumber = imagesShownCount + 1; // 실제 순서 저장 (1부터 시작)
+                shownImages.Add(item);
             }
             else
             {

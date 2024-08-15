@@ -44,9 +44,9 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    public void StartQuiz(List<WeightedImageQuizItem> quizItems)
+    public void StartQuiz(List<WeightedImageQuizItem> shownImages)
     {
-        currentQuizItems = quizItems;
+        currentQuizItems = GetRandomQuizItems(shownImages, 3);
         currentQuizIndex = 0;
         quizActive = true;
 
@@ -61,12 +61,27 @@ public class QuizManager : MonoBehaviour
         Debug.Log("퀴즈를 시작합니다. 20초 안에 3개의 문제를 풀어주세요.");
     }
 
+    private List<WeightedImageQuizItem> GetRandomQuizItems(List<WeightedImageQuizItem> sourceList, int count)
+    {
+        List<WeightedImageQuizItem> randomItems = new List<WeightedImageQuizItem>();
+        List<WeightedImageQuizItem> tempList = new List<WeightedImageQuizItem>(sourceList);
+
+        for (int i = 0; i < count && tempList.Count > 0; i++)
+        {
+            int randomIndex = Random.Range(0, tempList.Count);
+            randomItems.Add(tempList[randomIndex]);
+            tempList.RemoveAt(randomIndex);
+        }
+
+        return randomItems;
+    }
+
     void SetNextQuiz()
     {
         if (currentQuizIndex < currentQuizItems.Count)
         {
             WeightedImageQuizItem currentQuiz = currentQuizItems[currentQuizIndex];
-            questionText.text = currentQuiz.question;
+            questionText.text = $"{currentQuiz.sequenceNumber} {currentQuiz.question}";
 
             List<string> allAnswers = new List<string> { currentQuiz.correctAnswer };
             allAnswers.AddRange(currentQuiz.wrongAnswers);
