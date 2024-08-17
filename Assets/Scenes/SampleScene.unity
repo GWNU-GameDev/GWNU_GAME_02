@@ -2006,402 +2006,430 @@ MonoBehaviour:
   changeInterval: 15
   imageQuizItems:
   - image: {fileID: 21300000, guid: 81dfbf86576cc4cbe9e8858a87b2e3ba, type: 3}
-    question: What color is the woman wearing?
-    correctAnswer: Blue
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uD30C\uB791"
     wrongAnswers:
-    - Red
-    - Yellow
-    - Green
+    - "\uBE68\uAC15"
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: edc5be386421240f1a3f54dd06e05768, type: 3}
-    question: What color of lipstick is the woman wearing?
-    correctAnswer: Red
+    question: "\uC5EC\uC131\uC740 \uC5B4\uB5A4\uC0C9\uC758 \uB9BD\uC2A4\uD2F1\uC744
+      \uBC14\uB974\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uBD89\uC740\uC0C9"
     wrongAnswers:
-    - Brown
-    - Purple
-    - Blue
+    - "\uAC08\uC0C9"
+    - "\uC790\uC8FC\uC0C9"
+    - "\uD30C\uB791\uC0C9"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 2392f50f053fc457f9940ecba61adf62, type: 3}
-    question: What color is the woman wearing
-    correctAnswer: Red
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uBE68\uAC15"
     wrongAnswers:
-    - Yellow
-    - Green
-    - Blue
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: a6888eb4409964467879b1597d7f6189, type: 3}
-    question: What color is the man wearing?
-    correctAnswer: Gray
+    question: "\uB0A8\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uD68C\uC0C9"
     wrongAnswers:
-    - Blue
-    - Green
-    - Black
+    - "\uD30C\uB791 \uD30C\uB791 \uD30C\uB791 \uD30C\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791 \uAC80\uC815 \uAC80\uC815 "
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: b0e3b4c59425449e1bc148b347fdd6fb, type: 3}
-    question: What color of hair does the child have?
-    correctAnswer: Black
+    question: "\uC544\uC774\uB294 \uBB34\uC2A8\uC0C9\uC758 \uBA38\uB9AC\uCE74\uB77D\uC744
+      \uAC00\uC9C0\uACE0 \uC788\uB098\uC694"
+    correctAnswer: "\uAC80\uC815\uC0C9"
     wrongAnswers:
-    - Gold
-    - Red
-    - Gray
+    - "\uAE08\uC0C9"
+    - "\uBD89\uC740\uC0C9"
+    - "\uD68C\uC0C9"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: bc28061cb10b74618852beb774650e76, type: 3}
-    question: What color of hair does the woman have?
-    correctAnswer: Gold
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uBA38\uB9AC\uCE74\uB77D\uC744
+      \uAC00\uC9C0\uACE0 \uC788\uB098\uC694"
+    correctAnswer: "\uAE08\uC0C9"
     wrongAnswers:
-    - Red
-    - Green
-    - Blue
+    - "\uBE68\uAC15"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 183eb63379d414e8e81de9c6b6610369, type: 3}
-    question: What color is the woman wearing?
-    correctAnswer: Gray
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uD68C\uC0C9"
     wrongAnswers:
-    - Red
-    - Yellow
-    - Green
+    - "\uBE68\uAC15"
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 7c85ce07d426c4693ae9fe12daa4daf8, type: 3}
-    question: What color is the woman wearing?
-    correctAnswer: Blue
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uD30C\uB791"
     wrongAnswers:
-    - Red
-    - Yellow
-    - Green
+    - "\uBE68\uAC15"
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: f860152ee77294d949e00d28d4a3c831, type: 3}
-    question: What color of hair does the woman have?
-    correctAnswer: Brown
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uBA38\uB9AC\uCE74\uB77D\uC744
+      \uAC00\uC9C0\uACE0 \uC788\uB098\uC694"
+    correctAnswer: "\uAC08\uC0C9"
     wrongAnswers:
-    - Red
-    - Yellow
-    - Green
+    - "\uBE68\uAC15"
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: b9ba6130a7fa04343a94edb9adffd524, type: 3}
-    question: What color is the man wearing?
-    correctAnswer: Often
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uC790\uC8FC"
     wrongAnswers:
-    - Red
-    - Green
-    - Blue
+    - "\uBE68\uAC15"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 4e8d68056b9d04386be2727a87257377, type: 3}
-    question: What color is the woman wearing?
-    correctAnswer: Teal green
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uCCAD\uB85D"
     wrongAnswers:
-    - Yellow
-    - Green
-    - Blue
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 0530646cc6dc0431dbb39e01d3d6e90f, type: 3}
-    question: What color eyes do women have?
-    correctAnswer: Black
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uAC80\uC815"
     wrongAnswers:
-    - Teal green
-    - Yellow
-    - Blue
+    - "\uCCAD\uB85D"
+    - "\uB178\uB791"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 6d77281b3aa484fb6b443dcef4397c00, type: 3}
-    question: What color of lipstick is the woman wearing?
-    correctAnswer: Pink
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB9BD\uC2A4\uD2F1\uC744
+      \uBC14\uB974\uACE0 \uC788\uB098\uC694"
+    correctAnswer: "\uBD84\uD64D"
     wrongAnswers:
-    - Teal green
-    - Yellow
-    - Green
+    - "\uCCAD\uB85D"
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 125279bb944694efb82a2ac7df395d22, type: 3}
-    question: What color are you wearing?
-    correctAnswer: Navy
+    question: "\uB0A8\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uB0A8\uC0C9"
     wrongAnswers:
-    - Yellow
-    - Green
-    - Blue
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: e055f5abbee094eb1ab7078a153a35a8, type: 3}
-    question: What color of hair does the man have?
-    correctAnswer: Brown
+    question: "\uB0A8\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uBA38\uB9AC\uCE74\uB77D\uC744
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uAC08\uC0C9"
     wrongAnswers:
-    - Yellow
-    - Green
-    - Blue
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: a517c8e211ba84f10a1497c2e6595a19, type: 3}
-    question: What color of eyes does the woman have?
-    correctAnswer: Black
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uAC80"
     wrongAnswers:
-    - Yellow
-    - Green
-    - Blue
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 1a445ca217595400f9bc98a622d40a96, type: 3}
-    question: What color of lipstick does the woman have?
-    correctAnswer: Pink
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB9BD\uC2A4\uD2F1\uC744
+      \uAC00\uC9C0\uACE0 \uC788\uB098\uC694"
+    correctAnswer: "\uBD84\uD64D"
     wrongAnswers:
-    - Teal green
-    - Yellow
-    - Blue
+    - "\uCCAD\uB85D"
+    - "\uB178\uB791"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 80dd1012ce9af428fb52f52d2fe50f07, type: 3}
-    question: What earrings does the woman have?
-    correctAnswer: Pearl
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8 \uADC0\uAC78\uC774\uB97C \uAC00\uC9C0\uACE0
+      \uC788\uB098\uC694"
+    correctAnswer: "\uC9C4\uC8FC"
     wrongAnswers:
-    - Sapphire
-    - Emerald
-    - Ruby
+    - "\uC0AC\uD30C\uC774\uC5B4"
+    - "\uC5D0\uBA54\uB784\uB4DC"
+    - "\uB8E8\uBE44"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 61b1f7ec2652c4df787b5d33dd226cb7, type: 3}
-    question: What color is a woman's hair?
-    correctAnswer: Black
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uBA38\uB9AC\uCE74\uB77D\uC744
+      \uC785\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uAC80\uC815"
     wrongAnswers:
-    - Yellow
-    - Green
-    - Blue
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: fb0ce9fe12aaa48cf8d80bf11363eb98, type: 3}
-    question: What color of glasses is the woman wearing?
-    correctAnswer: Brown
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC548\uACBD\uC744 \uC4F0\uACE0
+      \uC788\uB098\uC694 "
+    correctAnswer: "\uAC08\uC0C9"
     wrongAnswers:
-    - Purple
-    - Yellow
-    - Blue
+    - "\uBCF4\uB77C"
+    - "\uB178\uB791"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
-  - image: {fileID: 21300000, guid: 01fbec27bc2799b449508c8d6dfb5111, type: 3}
-    question: What color of hair does the child have?
-    correctAnswer: Black
+  - image: {fileID: 21300000, guid: e0fffc70b4dfb2e4ba5a2707e9f10dd1, type: 3}
+    question: "\uC544\uC774\uB294 \uBB34\uC2A8\uC0C9\uC758 \uBA38\uB9AC\uCE74\uB77D\uC744
+      \uAC00\uC9C0\uACE0 \uC788\uB098\uC694"
+    correctAnswer: "\uAC80\uC815"
     wrongAnswers:
-    - Yellow
-    - Brown
-    - Blue
+    - "\uB178\uB791"
+    - "\uAC08\uC0C9"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: ce548d54f55f38a4caa6f3322c5b758b, type: 3}
-    question: What color of teeth do men have?
-    correctAnswer: White
+    question: "\uB0A8\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC774\uBE68\uC744 \uAC00\uC9C0\uACE0
+      \uC788\uB098\uC694"
+    correctAnswer: "\uD770\uC0C9"
     wrongAnswers:
-    - Teal green
-    - Green
-    - Blue
+    - "\uCCAD\uB85D"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 170012a470d522e4183e3fb6bdae08d9, type: 3}
-    question: What color is the man wearing?
-    correctAnswer: Brown
+    question: "\uB0A8\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uAC08\uC0C9"
     wrongAnswers:
-    - Teal green
-    - Purple
-    - Blue
+    - "\uBE68\uAC15"
+    - "\uBE68\uAC15"
+    - "\uBE68\uAC15"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 45649171380212946abdcf5097576d34, type: 3}
-    question: What color is the man wearing?
-    correctAnswer: Purple
+    question: "\uADF8\uAC83\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uBCF4\uB77C"
     wrongAnswers:
-    - Teal green
-    - Brown
-    - Blue
+    - "\uCCAD\uB85D"
+    - "\uB178\uB791"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 614c607fcc3f66249a4fbf6be33f03c5, type: 3}
-    question: What color are women's eyes?
-    correctAnswer: Red
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uC785\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uBE68\uAC15"
     wrongAnswers:
-    - Yellow
-    - Green
-    - Blue
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 6bc382b0276893e48abc03f3a0c8f4a4, type: 3}
-    question: What color are women's lips?
-    correctAnswer: Red
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC785\uC220\uC744 \uC785\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uBE68\uAC15"
     wrongAnswers:
-    - Teal green
-    - Yellow
-    - Blue
+    - "\uCCAD\uB85D"
+    - "\uB178\uB791"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 876fc7ffdbcd6c94399aa360b1741b0a, type: 3}
-    question: What color of eyes does the child have?
-    correctAnswer: None
+    question: "\uC544\uC774\uB294 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694? "
+    correctAnswer: 40413
     wrongAnswers:
-    - Brown
-    - Black
-    - Green
+    - "\uAC08\uC0C9"
+    - "\uAC80\uAC80\uC815\uC0C9"
+    - "\uCD08\uB85D"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: c3bc7b0840237154e9ae775cc802f12e, type: 3}
-    question: What color eyes do women have?
-    correctAnswer: Red
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uAC00\uC9C0\uACE0 \uC788\uB098\uC694 "
+    correctAnswer: "\uBE68"
     wrongAnswers:
-    - Yellow
-    - Green
-    - Blue
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 657e18c1f8415b04e824a9d04a7474e1, type: 3}
-    question: What color eyes do women have?
-    correctAnswer: Red
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uC785\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uBE68\uAC15"
     wrongAnswers:
-    - Purple
-    - Yellow
-    - Blue
+    - "\uBCF4\uB77C"
+    - "\uB178\uB791"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 6da3ae52f7a95d44785346c5a8d8e462, type: 3}
-    question: What color is the child wearing?
-    correctAnswer: Blue
+    question: "\uC544\uC774\uB294 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uD30C\uB791"
     wrongAnswers:
-    - Black
-    - Yellow
-    - Green
+    - "\uAC80\uC815"
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: b159e1ee6bbee5b419b5e7fdc8f5a42c, type: 3}
-    question: What color eyes do women have?
-    correctAnswer: Blue
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uAC00\uC9C0\uACE0 \uC788\uB098\uC694 "
+    correctAnswer: "\uD30C\uB791"
     wrongAnswers:
-    - Purple
-    - Yellow
-    - Orange
+    - "\uBCF4\uB77C"
+    - "\uB178\uB791"
+    - "\uC8FC\uD669"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 871808c9491fb6747919104e6c89953c, type: 3}
-    question: What color eyes do women have?
-    correctAnswer: Red
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uBE68\uAC15"
     wrongAnswers:
-    - Yellow
-    - Green
-    - Blue
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: c7845a6374497694c9694418fd334420, type: 3}
-    question: What color of lipstick did the woman wear?
-    correctAnswer: Red
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB9BD\uC2A4\uD2F1\uC744
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uBE68\uAC15"
     wrongAnswers:
-    - Orange
-    - Yellow
-    - Blue
+    - "\uC8FC\uD669"
+    - "\uB178\uB791"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 719394549c85e7f43bb09223a507a053, type: 3}
-    question: What color of hair does the woman have?
-    correctAnswer: Gold
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uBA38\uB9AC\uC0C9\uC744
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uAE08\uBC1C"
     wrongAnswers:
-    - Red
-    - Orange
-    - Black
+    - "\uBE68\uAC15"
+    - "\uC8FC\uD669"
+    - "\uD751\uBC1C"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 98acba889a84a9b49a52d315a3a7bc36, type: 3}
-    question: What color are men's lips?
-    correctAnswer: Black
+    question: "\uB0A8\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB9BD\uC2A4\uD2F1\uC744
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uBE68\uAC15"
     wrongAnswers:
-    - Red
-    - Yellow
-    - Green
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uAC80\uC815"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 095e2c51d97fe924f9944e0a3cb9760c, type: 3}
-    question: What color of eyes does the child have?
-    correctAnswer: Black
+    question: "\uC544\uC774\uB294 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uAC80\uC815"
     wrongAnswers:
-    - Red
-    - Green
-    - Blue
+    - "\uBE68\uAC15"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 2cb65ca7e4f5ce94eb3a54e8a6b5756f, type: 3}
-    question: What color of hair does the man have?
-    correctAnswer: Black
+    question: "\uB0A8\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uBA38\uB9AC\uCE74\uB77D\uC744
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uAC80\uC815"
     wrongAnswers:
-    - Yellow
-    - Gold
-    - Blue
+    - "\uB178\uB791"
+    - "\uAE08\uBC1C"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: ee3bb062005fc5f45b283f8520127b41, type: 3}
-    question: What color of eyes does the child have?
-    correctAnswer: Black
+    question: "\uC544\uC774\uB294 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uAC80\uC815"
     wrongAnswers:
-    - Red
-    - Red
-    - Red
+    - "\uBE68\uAC15"
+    - "\uBE68\uAC15"
+    - "\uBE68\uAC15"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 0f2fdfffb1195ed4d8b8c36820d591e9, type: 3}
-    question: What color of eyes do men have?
-    correctAnswer: Red
+    question: "\uB0A8\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uBE68\uAC15"
     wrongAnswers:
-    - Yellow
-    - Green
-    - Blue
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
   - image: {fileID: 21300000, guid: 33f58c46f74f57448b258f5be87b6ccd, type: 3}
-    question: What color are women's lips?
-    correctAnswer: Pink
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB9BD\uC2A4\uD2F1\uC744
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uBD84\uD64D"
     wrongAnswers:
-    - Black
-    - Yellow
-    - Blue
+    - "\uAC80\uC815"
+    - "\uB178\uB791"
+    - "\uD30C\uB791"
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
@@ -4422,9 +4450,45 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 327226206442981351, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a7f0b48ce02b1f48b2f8e026e2b1585, type: 2}
+    - target: {fileID: 327226206442981351, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -237515957904681972, guid: 6a7f0b48ce02b1f48b2f8e026e2b1585, type: 2}
+    - target: {fileID: 327226206442981351, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 603684342083518680, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a7f0b48ce02b1f48b2f8e026e2b1585, type: 2}
+    - target: {fileID: 603684342083518680, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -237515957904681972, guid: 6a7f0b48ce02b1f48b2f8e026e2b1585, type: 2}
+    - target: {fileID: 603684342083518680, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1028447171782247635, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336156660729831594, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a7f0b48ce02b1f48b2f8e026e2b1585, type: 2}
+    - target: {fileID: 1336156660729831594, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -237515957904681972, guid: 6a7f0b48ce02b1f48b2f8e026e2b1585, type: 2}
+    - target: {fileID: 1336156660729831594, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1938286085496779901, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
       propertyPath: m_Pivot.x
@@ -4504,6 +4568,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1938286085496779901, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2621302039297741151, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_text
+      value: "\uC5B4\uB5A4 \uB0A8\uC790"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2621302039297741151, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2621302039297741151, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a7f0b48ce02b1f48b2f8e026e2b1585, type: 2}
+    - target: {fileID: 2621302039297741151, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2621302039297741151, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -237515957904681972, guid: 6a7f0b48ce02b1f48b2f8e026e2b1585, type: 2}
+    - target: {fileID: 2621302039297741151, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2621302039297741151, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204863174089536169, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a7f0b48ce02b1f48b2f8e026e2b1585, type: 2}
+    - target: {fileID: 4204863174089536169, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -237515957904681972, guid: 6a7f0b48ce02b1f48b2f8e026e2b1585, type: 2}
+    - target: {fileID: 4204863174089536169, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4865337408452101922, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
