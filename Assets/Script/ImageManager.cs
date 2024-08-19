@@ -26,6 +26,8 @@ public class ImageManager : MonoBehaviour
     [SerializeField] private Image panelImage;     // 이미지를 표시할 UI Image 컴포넌트
     [SerializeField] private float changeInterval = 2.0f;  // 이미지 변경 간격
     [SerializeField] private List<WeightedImageQuizItem> imageQuizItems = new List<WeightedImageQuizItem>();  // 퀴즈 아이템 리스트
+    [SerializeField] private List<Sprite> tutorialImages = new List<Sprite>();  // 튜토리얼 이미지 리스트
+    [SerializeField] private float tutorialImageDuration = 10f;  // 튜토리얼 이미지 표시 시간
 
     private List<WeightedImageQuizItem> unusedItems;   // 아직 사용되지 않은 퀴즈 아이템
     private int imagesShownCount = 0;                  // 지금까지 보여준 이미지 수
@@ -56,7 +58,7 @@ public class ImageManager : MonoBehaviour
             if (panelImage != null)
             {
                 panelImage.gameObject.SetActive(true);
-                StartCoroutine(ImageQuizCycle());
+                StartCoroutine(ImageCycle());
             }
             else
             {
@@ -82,9 +84,13 @@ public class ImageManager : MonoBehaviour
         }
     }
 
-    // 이미지 퀴즈 사이클을 관리하는 코루틴
-    private IEnumerator ImageQuizCycle()
+    // 이미지 사이클을 관리하는 코루틴
+    private IEnumerator ImageCycle()
     {
+        // 튜토리얼 이미지 표시
+        yield return StartCoroutine(ShowTutorialImages());
+
+        // 이미지 퀴즈 사이클
         while (imagesShownCount < imageQuizItems.Count)
         {
             // 라운드당 이미지 선택
@@ -107,6 +113,23 @@ public class ImageManager : MonoBehaviour
             shownImages.Clear();
         }
         Debug.Log("모든 이미지를 보여주었습니다. 프로그램을 종료합니다.");
+    }
+
+    // 튜토리얼 이미지를 보여주는 코루틴
+    private IEnumerator ShowTutorialImages()
+    {
+        foreach (var tutorialImage in tutorialImages)
+        {
+            if (panelImage != null && tutorialImage != null)
+            {
+                panelImage.sprite = tutorialImage;
+                yield return new WaitForSeconds(tutorialImageDuration);
+            }
+            else
+            {
+                Debug.LogWarning("Tutorial image is missing.");
+            }
+        }
     }
 
     // 선택된 이미지들을 보여주는 코루틴

@@ -5577,6 +5577,13 @@ MonoBehaviour:
     baseWeight: 0
     currentWeight: 0
     sequenceNumber: 0
+  tutorialImages:
+  - {fileID: 21300000, guid: 86cca0124c3c58e40b07a3381394bd49, type: 3}
+  - {fileID: 21300000, guid: c12c92168fb55cb4787329d072967db8, type: 3}
+  - {fileID: 21300000, guid: a5742dfc4a3552d468cff4b7940b67cb, type: 3}
+  - {fileID: 21300000, guid: dc3c264172f1b614492ddcc7d4e60b34, type: 3}
+  - {fileID: 21300000, guid: 28a67b97a77d17948ae43fd7c8b69345, type: 3}
+  tutorialImageDuration: 10
 --- !u!1 &1227310131
 GameObject:
   m_ObjectHideFlags: 0
