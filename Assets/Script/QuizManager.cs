@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class QuizManager : MonoBehaviour
 {
@@ -184,7 +185,7 @@ public class QuizManager : MonoBehaviour
     void GameOver()
     {
         Debug.Log("게임 오버!");
-        // 여기에 게임 오버 로직 추가
+        SceneManager.LoadScene("Strength0EndingScene"); // 게임 오버 시 Strength0EndingScene으로 이동
     }
 
     public bool IsQuizActive()

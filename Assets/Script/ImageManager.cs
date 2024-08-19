@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-// 이미지 퀴즈 아이템을 위한 클래스
 [System.Serializable]
 public class WeightedImageQuizItem
 {
@@ -20,7 +20,6 @@ public class WeightedImageQuizItem
 
 public class ImageManager : MonoBehaviour
 {
-    // 싱글톤 패턴을 위한 인스턴스
     public static ImageManager Instance { get; private set; }
 
     [SerializeField] private Image panelImage;     // 이미지를 표시할 UI Image 컴포넌트
@@ -36,7 +35,6 @@ public class ImageManager : MonoBehaviour
 
     private void Awake()
     {
-        // 싱글톤 패턴 구현
         if (Instance == null)
         {
             Instance = this;
@@ -52,7 +50,6 @@ public class ImageManager : MonoBehaviour
     {
         if (imageQuizItems.Count > 0)
         {
-            // 사용되지 않은 아이템 리스트 초기화
             unusedItems = new List<WeightedImageQuizItem>(imageQuizItems);
             ResetWeights();
             if (panelImage != null)
@@ -75,7 +72,6 @@ public class ImageManager : MonoBehaviour
         }
     }
 
-    // 가중치 초기화 메서드
     private void ResetWeights()
     {
         foreach (var item in unusedItems)
@@ -84,20 +80,15 @@ public class ImageManager : MonoBehaviour
         }
     }
 
-    // 이미지 사이클을 관리하는 코루틴
     private IEnumerator ImageCycle()
     {
-        // 튜토리얼 이미지 표시
         yield return StartCoroutine(ShowTutorialImages());
 
-        // 이미지 퀴즈 사이클
         while (imagesShownCount < imageQuizItems.Count)
         {
-            // 라운드당 이미지 선택
             List<WeightedImageQuizItem> roundItems = GetRandomWeightedItems(ImagesPerRound);
             yield return StartCoroutine(ShowImages(roundItems));
 
-            // 퀴즈 시작
             if (QuizManager.Instance != null)
             {
                 QuizManager.Instance.StartQuiz(shownImages);
@@ -109,13 +100,17 @@ public class ImageManager : MonoBehaviour
                 yield break;
             }
 
-            // 라운드가 끝나면 shownImages 리스트를 초기화
             shownImages.Clear();
+
+            // 모든 이미지를 사용했는지 확인
+            if (imagesShownCount >= imageQuizItems.Count)
+            {
+                LoadSuccessEndingScene();
+                yield break;
+            }
         }
-        Debug.Log("모든 이미지를 보여주었습니다. 프로그램을 종료합니다.");
     }
 
-    // 튜토리얼 이미지를 보여주는 코루틴
     private IEnumerator ShowTutorialImages()
     {
         foreach (var tutorialImage in tutorialImages)
@@ -132,7 +127,6 @@ public class ImageManager : MonoBehaviour
         }
     }
 
-    // 선택된 이미지들을 보여주는 코루틴
     private IEnumerator ShowImages(List<WeightedImageQuizItem> items)
     {
         for (int i = 0; i < items.Count; i++)
@@ -157,14 +151,12 @@ public class ImageManager : MonoBehaviour
         }
     }
 
-    // 가중치를 고려하여 랜덤하게 아이템을 선택하는 메서드
     private List<WeightedImageQuizItem> GetRandomWeightedItems(int count, List<WeightedImageQuizItem> sourceList = null)
     {
         sourceList = sourceList ?? unusedItems;
         List<WeightedImageQuizItem> result = new List<WeightedImageQuizItem>();
         int itemsToSelect = Mathf.Min(count, sourceList.Count);
 
-        // 정신력에 따라 가중치 조정
         float mentalHealthFactor = MentalHealthManager.Instance.GetMentalHealthPercentage();
         foreach (var item in sourceList)
         {
@@ -189,5 +181,12 @@ public class ImageManager : MonoBehaviour
             }
         }
         return result;
+    }
+
+    // 성공 엔딩 씬을 로드하는 새로운 메서드
+    private void LoadSuccessEndingScene()
+    {
+        Debug.Log("모든 이미지를 성공적으로 보여주었습니다. 성공 엔딩으로 이동합니다.");
+        SceneManager.LoadScene("SuccessEndingScene");
     }
 }

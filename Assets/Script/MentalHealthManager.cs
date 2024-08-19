@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement; // 씬 전환을 위해 추가
 
 public class MentalHealthManager : MonoBehaviour
 {
@@ -10,9 +11,11 @@ public class MentalHealthManager : MonoBehaviour
     public GameObject level2Object;
     public GameObject level3Object;
     private EyesBlinking eyesBlinking;
+    private float immunityDuration = 50f;
+    private float immunityTimer;
 
-    private float immunityDuration = 50f; // 정신력 감소 면역 시간 (50초)
-    private float immunityTimer; // 면역 시간을 추적하는 타이머
+    // 엔딩 씬 이름 추가
+    private string[] endingScenes = { "Mental0EndingScene_01", "Mental0EndingScene_02" };
 
     private void Awake()
     {
@@ -37,8 +40,7 @@ public class MentalHealthManager : MonoBehaviour
         }
         UpdateMentalHealthUI();
         UpdateLevelStatus();
-
-        immunityTimer = immunityDuration; // 타이머 초기화
+        immunityTimer = immunityDuration;
         StartCoroutine(ImmunityCountdown());
     }
 
@@ -49,20 +51,19 @@ public class MentalHealthManager : MonoBehaviour
 
     public void DecreaseMentalHealth()
     {
-        if (immunityTimer > 0) // 면역 시간 동안은 정신력 감소 무시
+        if (immunityTimer > 0)
         {
             Debug.Log("Immunity active. Mental health not decreased.");
             return;
         }
-
         int previousMentalHealth = currentMentalHealth;
         currentMentalHealth -= decreaseRate;
-        if (currentMentalHealth < 0)
+        if (currentMentalHealth <= 0)
         {
             currentMentalHealth = 0;
+            LoadRandomEndingScene(); // 정신력이 0이 되면 랜덤 엔딩 씬 로드
         }
         UpdateMentalHealthUI();
-
         if (ShouldForceBlinkEyes(previousMentalHealth, currentMentalHealth))
         {
             StartCoroutine(ForceBlinkAndUpdateLevel());
@@ -130,5 +131,13 @@ public class MentalHealthManager : MonoBehaviour
             Debug.Log($"Immunity time remaining: {immunityTimer} seconds");
         }
         Debug.Log("Immunity period ended. Mental health can now decrease.");
+    }
+
+    // 랜덤 엔딩 씬을 로드하는 새로운 메서드
+    private void LoadRandomEndingScene()
+    {
+        string randomEndingScene = endingScenes[Random.Range(0, endingScenes.Length)];
+        SceneManager.LoadScene(randomEndingScene);
+        Debug.Log($"Loading ending scene: {randomEndingScene}");
     }
 }
