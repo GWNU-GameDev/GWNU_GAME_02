@@ -22,34 +22,48 @@ public class EyesBlinking : MonoBehaviour
     void ToggleEyes()
     {
         eyesClosed = !eyesClosed;
-
-        // 눈을 감거나 뜨는 애니메이션 상태를 전환합니다.
         if (eyesClosed)
         {
-            // 눈을 감는 애니메이션을 재생합니다.
-            animator.SetTrigger("EyesClose");
+            CloseEyes();
         }
         else
         {
-            // 눈을 뜨는 애니메이션을 재생합니다.
-            animator.SetTrigger("EyesOpen");
+            OpenEyes();
         }
+    }
+
+    void CloseEyes()
+    {
+        eyesClosed = true;
+        animator.SetTrigger("EyesClose");
+    }
+
+    void OpenEyes()
+    {
+        eyesClosed = false;
+        animator.SetTrigger("EyesOpen");
     }
 
     IEnumerator BlinkAtStart()
     {
-        // 눈을 감는 애니메이션을 재생합니다.
-        animator.SetTrigger("EyesClose");
-        yield return new WaitForSeconds(1.5f); // 눈을 감은 상태로 대기 (1.5초 대기)
-        // 눈을 뜨는 애니메이션을 재생합니다.
-        animator.SetTrigger("EyesOpen");
-
+        // 첫 번째 깜빡임
+        CloseEyes();
+        yield return new WaitForSeconds(1.5f);
+        OpenEyes();
         yield return new WaitForSeconds(3.0f);
-        // 눈을 감는 애니메이션을 재생합니다.
-        animator.SetTrigger("EyesClose");
-        yield return new WaitForSeconds(1.5f); // 눈을 감은 상태로 대기 (1.5초 대기)
-        // 눈을 뜨는 애니메이션을 재생합니다.
-        animator.SetTrigger("EyesOpen");
+
+        // 두 번째 깜빡임
+        CloseEyes();
+        yield return new WaitForSeconds(1.5f);
+        OpenEyes();
+    }
+
+    public IEnumerator ForceBlinkCoroutine()
+    {
+        CloseEyes();
+        yield return new WaitForSeconds(1.0f);
+        OpenEyes();
+        
     }
 
     public bool IsEyesClosed()
