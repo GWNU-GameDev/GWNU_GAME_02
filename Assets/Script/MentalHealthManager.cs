@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement; // 씬 전환을 위해 추가
+using UnityEngine.SceneManagement;
 
 public class MentalHealthManager : MonoBehaviour
 {

@@ -6,8 +6,7 @@ public class CameraRaycaster : MonoBehaviour
     public MentalHealthManager mentalHealthManager;
     public EyesBlinking eyesBlinking; // 눈 깜박임 스크립트 참조
     public string targetTag = "ImagePanel"; // 정신력을 감소시킬 태그
-    public float decreaseInterval = 1.0f; // 정신력 감소 간격 (초 단위)
-
+    public float decreaseInterval = 2.0f; // 정신력 감소 간격 (2초로 변경)
     private Camera cam;
     private bool isDecreasingMentalHealth = false;
 
@@ -36,17 +35,14 @@ public class CameraRaycaster : MonoBehaviour
 
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit[] hits = Physics.RaycastAll(ray);
-
         // 레이 시각화
         Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red);
 
         bool foundTarget = false;
-
         foreach (RaycastHit hit in hits)
         {
             string hitTag = hit.collider.tag;
             // Debug.Log("Looking at: " + hitTag);
-
             if (hitTag == targetTag)
             {
                 foundTarget = true;
@@ -83,7 +79,6 @@ public class CameraRaycaster : MonoBehaviour
         {
             mentalHealthManager.DecreaseMentalHealth();
             yield return new WaitForSeconds(decreaseInterval);
-
             if (mentalHealthManager.IsMentalHealthDepleted())
             {
                 // 정신력이 모두 소모된 경우 처리 (예: 게임 오버)

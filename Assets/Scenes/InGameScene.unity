@@ -3558,7 +3558,7 @@ MonoBehaviour:
   mentalHealthManager: {fileID: 1419131142}
   eyesBlinking: {fileID: 1117296148}
   targetTag: ImagePanel
-  decreaseInterval: 1
+  decreaseInterval: 2
 --- !u!114 &963194234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6525,6 +6525,18 @@ PrefabInstance:
     - target: {fileID: 4175647302192900533, guid: 52c8437bb8ec0ba4b8dc5cf003ae00e4, type: 3}
       propertyPath: m_Range
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175647302192900533, guid: 52c8437bb8ec0ba4b8dc5cf003ae00e4, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6179246
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175647302192900533, guid: 52c8437bb8ec0ba4b8dc5cf003ae00e4, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6179246
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175647302192900533, guid: 52c8437bb8ec0ba4b8dc5cf003ae00e4, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4175647302192900533, guid: 52c8437bb8ec0ba4b8dc5cf003ae00e4, type: 3}
       propertyPath: m_Intensity
