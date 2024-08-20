@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{61442a09-69c3-410d-868e-23f8ccc825ab}">
+		<property name="assetPath">
+			<value>mantal_damage.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.7437499999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6553189b-d9ab-4cfc-832c-5e9c7561ab91}</destination>
+		</relationship>
+	</object>
+</objects>

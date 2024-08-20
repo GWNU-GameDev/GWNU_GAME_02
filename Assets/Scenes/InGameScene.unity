@@ -4095,6 +4095,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1049533883 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2979418076042709820, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
+  m_PrefabInstance: {fileID: 3256188701902743428}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1051217345
 GameObject:
   m_ObjectHideFlags: 0
@@ -9013,6 +9024,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicEventPath: event:/BackgroundMusic
+--- !u!114 &2071474959 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2647503241045875765, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
+  m_PrefabInstance: {fileID: 3256188701902743428}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2079137339
 GameObject:
   m_ObjectHideFlags: 0
@@ -9851,9 +9873,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1412002920}
     - target: {fileID: 6105318925195374506, guid: 98206b021163f2449b6db482807d8f11, type: 3}
+      propertyPath: sfxMuteToggle
+      value: 
+      objectReference: {fileID: 1049533883}
+    - target: {fileID: 6105318925195374506, guid: 98206b021163f2449b6db482807d8f11, type: 3}
+      propertyPath: sfxVolumeSlider
+      value: 
+      objectReference: {fileID: 2071474959}
+    - target: {fileID: 6105318925195374506, guid: 98206b021163f2449b6db482807d8f11, type: 3}
+      propertyPath: masterMuteToggle
+      value: 
+      objectReference: {fileID: 2113380941}
+    - target: {fileID: 6105318925195374506, guid: 98206b021163f2449b6db482807d8f11, type: 3}
       propertyPath: mouseSpeedSlider
       value: 
       objectReference: {fileID: 3256188701902743429}
+    - target: {fileID: 6105318925195374506, guid: 98206b021163f2449b6db482807d8f11, type: 3}
+      propertyPath: masterVolumeSlider
+      value: 
+      objectReference: {fileID: 1412002920}
     - target: {fileID: 8049280896297708895, guid: 98206b021163f2449b6db482807d8f11, type: 3}
       propertyPath: m_Name
       value: Menumanager
@@ -9878,6 +9916,14 @@ PrefabInstance:
     - target: {fileID: 373949364481989988, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753986891207655157, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
+      propertyPath: m_Name
+      value: SFXToggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1567680647968554950, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
+      propertyPath: m_Name
+      value: SFXSlider
       objectReference: {fileID: 0}
     - target: {fileID: 2594447409487731204, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
       propertyPath: m_AnchorMax.y
@@ -9987,9 +10033,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5513993989018357663, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
+      propertyPath: m_Name
+      value: MasterToggle
+      objectReference: {fileID: 0}
     - target: {fileID: 6169662233151257101, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146069220682982152, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
+      propertyPath: m_Name
+      value: MasterSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928673791717876453, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
+      propertyPath: m_Name
+      value: MasterVolumMenu
       objectReference: {fileID: 0}
     - target: {fileID: 8499105578590720364, guid: a32433ca2d6a0b7489496ac6e732bca6, type: 3}
       propertyPath: m_AnchorMax.x
@@ -10230,6 +10288,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 784580878814454299, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 1028447171782247635, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -10326,6 +10388,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2356333197851959146, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 2621302039297741151, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
       propertyPath: m_text
       value: "\uC5B4\uB5A4 \uB0A8\uC790"
@@ -10369,6 +10435,14 @@ PrefabInstance:
     - target: {fileID: 4865337408452101922, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018829846128039112, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704713374481624074, guid: e1b0b41fd29fc6b41acb4662013d9e78, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

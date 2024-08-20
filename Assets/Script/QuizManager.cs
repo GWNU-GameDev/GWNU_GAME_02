@@ -20,6 +20,11 @@ public class QuizManager : MonoBehaviour
     private int hp = 5;
     private Coroutine timerCoroutine;
 
+    private const string DAMAGE_SOUND_EVENT = "event:/Damage";
+    private const string STEP_SOUND_EVENT = "event:/StepSound";
+
+    private float previousTimeScale;
+
     private void Awake()
     {
         if (Instance == null)
@@ -55,6 +60,19 @@ public class QuizManager : MonoBehaviour
         {
             quizPanel.SetActive(true);
         }
+
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(STEP_SOUND_EVENT);
+        }
+        else
+        {
+            Debug.LogWarning("SoundManager instance not found. Make sure it's properly initialized.");
+        }
+
+        // 현재 TimeScale 저장 후 0으로 설정
+        previousTimeScale = Time.timeScale;
+        Time.timeScale = 0f;
 
         SetNextQuiz();
         remainingTime = 20f;
@@ -141,6 +159,9 @@ public class QuizManager : MonoBehaviour
             StopCoroutine(timerCoroutine);
         }
 
+        // TimeScale을 이전 값으로 복원
+        Time.timeScale = previousTimeScale;
+
         if (hp <= 0)
         {
             GameOver();
@@ -180,6 +201,16 @@ public class QuizManager : MonoBehaviour
     {
         hp--;
         Debug.Log($"현재 HP: {hp}");
+
+        // 데미지 사운드 재생
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySound(DAMAGE_SOUND_EVENT);
+        }
+        else
+        {
+            Debug.LogWarning("SoundManager instance not found. Make sure it's properly initialized.");
+        }
     }
 
     void GameOver()

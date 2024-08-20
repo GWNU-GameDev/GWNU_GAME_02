@@ -8,8 +8,11 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
     private Bus masterBus;
-    private float previousVolume = 1f;
-    private bool isMuted = false;
+    private Bus sfxBus;
+    private float previousMasterVolume = 1f;
+    private float previousSFXVolume = 1f;
+    private bool isMasterMuted = false;
+    private bool isSFXMuted = false;
 
     private void Awake()
     {
@@ -23,8 +26,8 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
         masterBus = RuntimeManager.GetBus("bus:/");
+        sfxBus = RuntimeManager.GetBus("bus:/SFX");
     }
 
     // 사운드 이벤트 재생
@@ -49,6 +52,14 @@ public class SoundManager : MonoBehaviour
     public void SetMasterVolume(float volume)
     {
         masterBus.setVolume(volume);
+        previousMasterVolume = volume;
+    }
+
+    // SFX 볼륨 조절
+    public void SetSFXVolume(float volume)
+    {
+        sfxBus.setVolume(volume);
+        previousSFXVolume = volume;
     }
 
     // 사운드 이벤트 중지
@@ -64,19 +75,49 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    // 음소거 토글 (볼륨 0으로 설정)
-    public void ToggleMute()
+    // 마스터 음소거 토글
+    public void ToggleMasterMute()
     {
-        if (isMuted)
+        if (isMasterMuted)
         {
-            masterBus.setVolume(previousVolume);
+            masterBus.setVolume(previousMasterVolume);
         }
         else
         {
-            masterBus.getVolume(out previousVolume);
+            masterBus.getVolume(out previousMasterVolume);
             masterBus.setVolume(0f);
         }
+        isMasterMuted = !isMasterMuted;
+    }
 
-        isMuted = !isMuted;
+    // SFX 음소거 토글
+    public void ToggleSFXMute()
+    {
+        if (isSFXMuted)
+        {
+            sfxBus.setVolume(previousSFXVolume);
+        }
+        else
+        {
+            sfxBus.getVolume(out previousSFXVolume);
+            sfxBus.setVolume(0f);
+        }
+        isSFXMuted = !isSFXMuted;
+    }
+
+    // 현재 마스터 볼륨 가져오기
+    public float GetMasterVolume()
+    {
+        float volume;
+        masterBus.getVolume(out volume);
+        return volume;
+    }
+
+    // 현재 SFX 볼륨 가져오기
+    public float GetSFXVolume()
+    {
+        float volume;
+        sfxBus.getVolume(out volume);
+        return volume;
     }
 }
