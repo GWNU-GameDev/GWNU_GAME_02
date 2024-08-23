@@ -1,90 +1,118 @@
-using System.Collections;
 using UnityEngine;
+using System.Collections;
 
-public class CameraRaycaster : MonoBehaviour
+public class CameraBoxCaster : MonoBehaviour
 {
     public MentalHealthManager mentalHealthManager;
-    public EyesBlinking eyesBlinking; // 눈 깜박임 스크립트 참조
-    public string targetTag = "ImagePanel"; // 정신력을 감소시킬 태그
-    public float decreaseInterval = 2.0f; // 정신력 감소 간격 (2초로 변경)
-    private Camera cam;
-    private bool isDecreasingMentalHealth = false;
+    public EyesBlinking eyesBlinking;
+    public string targetTag = "ImagePanel";
+    public float decreaseInterval = 2.0f; // 정신력 감소 간격 (초)
 
-    void Start()
-    {
-        cam = GetComponent<Camera>(); // 현재 오브젝트의 카메라 컴포넌트를 할당
-        if (cam == null)
-        {
-            Debug.LogWarning("Camera component is not attached to this GameObject.");
-        }
-    }
+    [SerializeField] private float maxDistance = 20.0f; // BoxCast의 최대 거리
+    [SerializeField] private Color rayColor = Color.red; // Gizmo 레이의 색상
+
+    private bool isLookingAtTarget = false; // 현재 타겟을 보고 있는지 여부
+    private Coroutine mentalHealthCoroutine; // 정신력 감소 코루틴
+    private float lastDecreaseTime; // 마지막으로 정신력이 감소한 시간
 
     void Update()
     {
         CheckForTargets();
     }
 
+    // 타겟 검사 및 정신력 감소 로직
     void CheckForTargets()
     {
+        // 눈이 감겼는지 확인
         if (eyesBlinking != null && eyesBlinking.IsEyesClosed())
         {
-            StopDecreaseMentalHealth();
-            Debug.Log("Eyes are closed. Mental health will not decrease.");
+            isLookingAtTarget = false;
             return;
         }
 
-        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        RaycastHit[] hits = Physics.RaycastAll(ray);
-        // 레이 시각화
-        Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red);
+        bool currentlyLookingAtTarget = false;
 
-        bool foundTarget = false;
-        foreach (RaycastHit hit in hits)
+        // BoxCast를 사용하여 타겟 감지
+        if (Physics.BoxCast(transform.position, transform.lossyScale / 2.0f, transform.forward, out RaycastHit hit, transform.rotation, maxDistance))
         {
-            string hitTag = hit.collider.tag;
-            // Debug.Log("Looking at: " + hitTag);
-            if (hitTag == targetTag)
+            if (hit.collider.CompareTag(targetTag))
             {
-                foundTarget = true;
-                break;
+                currentlyLookingAtTarget = true;
             }
         }
 
-        if (foundTarget)
+        // 타겟을 보는 상태가 변경되었을 때만 코루틴 시작/중지
+        if (currentlyLookingAtTarget != isLookingAtTarget)
         {
-            if (!isDecreasingMentalHealth)
+            isLookingAtTarget = currentlyLookingAtTarget;
+            if (isLookingAtTarget)
             {
-                StartCoroutine(DecreaseMentalHealthOverTime());
+                StartMentalHealthDecrease();
             }
+            else
+            {
+                StopMentalHealthDecrease();
+            }
+        }
+    }
+
+    // 정신력 감소 시작
+    void StartMentalHealthDecrease()
+    {
+        if (mentalHealthCoroutine == null)
+        {
+            mentalHealthCoroutine = StartCoroutine(DecreaseMentalHealthOverTime());
+        }
+    }
+
+    // 정신력 감소 중지
+    void StopMentalHealthDecrease()
+    {
+        if (mentalHealthCoroutine != null)
+        {
+            StopCoroutine(mentalHealthCoroutine);
+            mentalHealthCoroutine = null;
+        }
+    }
+
+    // 시간에 따른 정신력 감소 코루틴
+    private IEnumerator DecreaseMentalHealthOverTime()
+    {
+        while (true)
+        {
+            // 마지막 감소 시간으로부터 decreaseInterval 이상 지났는지 확인
+            if (Time.time - lastDecreaseTime >= decreaseInterval)
+            {
+                mentalHealthManager.DecreaseMentalHealth();
+                lastDecreaseTime = Time.time;
+
+                if (mentalHealthManager.IsMentalHealthDepleted())
+                {
+                    Debug.Log("정신력이 모두 소진되었습니다!");
+                    StopMentalHealthDecrease();
+                    break;
+                }
+            }
+            yield return null; // 매 프레임마다 체크
+        }
+    }
+
+    // Gizmo를 사용한 BoxCast 시각화 (에디터에서만 동작)
+    void OnDrawGizmos()
+    {
+        Gizmos.color = rayColor;
+
+        if (Physics.BoxCast(transform.position, transform.lossyScale / 2.0f, transform.forward, out RaycastHit hit, transform.rotation, maxDistance))
+        {
+            // 충돌 지점까지 레이 그리기
+            Gizmos.DrawRay(transform.position, transform.forward * hit.distance);
+            // 충돌 지점에 와이어 큐브 그리기
+            Gizmos.DrawWireCube(transform.position + transform.forward * hit.distance, transform.lossyScale);
         }
         else
         {
-            StopDecreaseMentalHealth();
-        }
-    }
-
-    void StopDecreaseMentalHealth()
-    {
-        if (isDecreasingMentalHealth)
-        {
-            StopCoroutine(DecreaseMentalHealthOverTime());
-            isDecreasingMentalHealth = false;
-        }
-    }
-
-    private IEnumerator DecreaseMentalHealthOverTime()
-    {
-        isDecreasingMentalHealth = true;
-        while (isDecreasingMentalHealth)
-        {
-            mentalHealthManager.DecreaseMentalHealth();
-            yield return new WaitForSeconds(decreaseInterval);
-            if (mentalHealthManager.IsMentalHealthDepleted())
-            {
-                // 정신력이 모두 소모된 경우 처리 (예: 게임 오버)
-                Debug.Log("Mental Health Depleted!");
-                isDecreasingMentalHealth = false;
-            }
+            // 충돌이 없을 경우 최대 거리까지 레이 그리기
+            Gizmos.DrawRay(transform.position, transform.forward * maxDistance);
         }
     }
 }

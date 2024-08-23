@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{dd81e508-58a3-4a0e-bde9-9db5dba031a0}">
+		<property name="assetPath">
+			<value>엔딩크레딧.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>82.285714285714292</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6553189b-d9ab-4cfc-832c-5e9c7561ab91}</destination>
+		</relationship>
+	</object>
+</objects>
