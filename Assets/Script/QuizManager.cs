@@ -107,7 +107,7 @@ public class QuizManager : MonoBehaviour
         if (currentQuizIndex < currentQuizItems.Count)
         {
             WeightedImageQuizItem currentQuiz = currentQuizItems[currentQuizIndex];
-            questionText.text = $"Photo {currentQuiz.sequenceNumber} : {currentQuiz.question}";
+            questionText.text = $"Photo {(currentQuiz.sequenceNumber - 1) % 5 + 1} : {currentQuiz.question}";
 
             List<string> allAnswers = new List<string> { currentQuiz.correctAnswer };
             allAnswers.AddRange(currentQuiz.wrongAnswers);
