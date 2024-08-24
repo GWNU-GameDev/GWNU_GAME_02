@@ -60,6 +60,7 @@ public class QuizManager : MonoBehaviour
         currentQuizIndex = 0;
         quizActive = true;
 
+        quizPanel.SetActive(true);
         if (quizPanel != null)
         {
             quizPanel.SetActive(true);

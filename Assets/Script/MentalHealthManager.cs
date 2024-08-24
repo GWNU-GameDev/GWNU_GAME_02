@@ -7,7 +7,7 @@ public class MentalHealthManager : MonoBehaviour
     public static MentalHealthManager Instance { get; private set; } // 싱글톤 인스턴스
     public int maxMentalHealth = 100;    // 최대 정신 건강 수치
     public int decreaseRate = 1;         // 정신 건강 감소율
-    private int currentMentalHealth;     // 현재 정신 건강 수치
+    private int currentMentalHealth = 100;// 현재 정신 건강 수치
     public GameObject level2Object;      // 레벨 2 오브젝트
     public GameObject level3Object;      // 레벨 3 오브젝트
     private EyesBlinking eyesBlinking;   // 눈 깜빡임 컴포넌트
