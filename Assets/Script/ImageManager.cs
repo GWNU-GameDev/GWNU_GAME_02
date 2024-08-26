@@ -38,7 +38,7 @@ public class ImageManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            // DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -188,5 +188,11 @@ public class ImageManager : MonoBehaviour
     {
         Debug.Log("모든 이미지를 성공적으로 보여주었습니다. 성공 엔딩으로 이동합니다.");
         SceneManager.LoadScene("SuccessEndingScene");
+    }
+
+    [ContextMenu("test")]
+    public void abcTest()
+    {
+        SceneManager.LoadScene("InGameScene");
     }
 }
