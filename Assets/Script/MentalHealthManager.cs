@@ -8,8 +8,6 @@ public class MentalHealthManager : MonoBehaviour
     public int maxMentalHealth = 100;    // 최대 정신 건강 수치
     public int decreaseRate = 1;         // 정신 건강 감소율
     private int currentMentalHealth = 100;// 현재 정신 건강 수치
-    public GameObject level2Object;      // 레벨 2 오브젝트
-    public GameObject level3Object;      // 레벨 3 오브젝트
     private EyesBlinking eyesBlinking;   // 눈 깜빡임 컴포넌트
     private float immunityDuration = 50f; // 면역 지속 시간
     private float immunityTimer;         // 면역 타이머
@@ -155,20 +153,14 @@ public class MentalHealthManager : MonoBehaviour
         if (currentMentalHealth >= 75 && currentMentalHealth <= 100)
         {
             newMentalLevel = 1;
-            level2Object.SetActive(false);
-            level3Object.SetActive(false);
         }
         else if (currentMentalHealth >= 50 && currentMentalHealth <= 74)
         {
             newMentalLevel = 2;
-            level2Object.SetActive(true);
-            level3Object.SetActive(false);
         }
         else
         {
             newMentalLevel = 3;
-            level2Object.SetActive(false);
-            level3Object.SetActive(true);
         }
 
         // 레벨이 변경되었는지 확인
