@@ -30,11 +30,12 @@ public class ImageManager : MonoBehaviour
 
     private List<WeightedImageQuizItem> unusedItems;   // 아직 사용되지 않은 퀴즈 아이템
     private int imagesShownCount = 0;                  // 지금까지 보여준 이미지 수
-    private const int ImagesPerRound = 5;              // 라운드당 보여줄 이미지 수
+    private const int ImagesPerRound = 1;              // 라운드당 보여줄 이미지 수
     private List<WeightedImageQuizItem> shownImages = new List<WeightedImageQuizItem>();  // 보여진 이미지들을 순서대로 저장할 리스트
 
     private void Awake()
     {
+        // 싱글톤 패턴 구현
         if (Instance == null)
         {
             Instance = this;
@@ -72,6 +73,7 @@ public class ImageManager : MonoBehaviour
         }
     }
 
+    // 가중치 초기화
     private void ResetWeights()
     {
         foreach (var item in unusedItems)
@@ -80,9 +82,16 @@ public class ImageManager : MonoBehaviour
         }
     }
 
+    // 이미지 사이클 코루틴
     private IEnumerator ImageCycle()
     {
+        // 튜토리얼 시작 전 면역 시작
+        MentalHealthManager.Instance.StartImmunity();
+
         yield return StartCoroutine(ShowTutorialImages());
+
+        // 튜토리얼 종료 후 면역 해제
+        MentalHealthManager.Instance.EndImmunity();
 
         while (imagesShownCount < imageQuizItems.Count)
         {
@@ -111,6 +120,7 @@ public class ImageManager : MonoBehaviour
         }
     }
 
+    // 튜토리얼 이미지 표시
     private IEnumerator ShowTutorialImages()
     {
         foreach (var tutorialImage in tutorialImages)
@@ -127,6 +137,7 @@ public class ImageManager : MonoBehaviour
         }
     }
 
+    // 이미지 표시
     private IEnumerator ShowImages(List<WeightedImageQuizItem> items)
     {
         for (int i = 0; i < items.Count; i++)
@@ -151,45 +162,54 @@ public class ImageManager : MonoBehaviour
         }
     }
 
+    // 랜덤 가중치 아이템 선택
     private List<WeightedImageQuizItem> GetRandomWeightedItems(int count, List<WeightedImageQuizItem> sourceList = null)
     {
-        sourceList = sourceList ?? unusedItems;
+        sourceList = sourceList ?? new List<WeightedImageQuizItem>(unusedItems);
         List<WeightedImageQuizItem> result = new List<WeightedImageQuizItem>();
         int itemsToSelect = Mathf.Min(count, sourceList.Count);
 
         float mentalHealthFactor = MentalHealthManager.Instance.GetMentalHealthPercentage();
+
+        // 모든 아이템의 가중치를 업데이트하고 총 가중치를 계산
+        float totalWeight = 0f;
         foreach (var item in sourceList)
         {
             item.currentWeight = item.baseWeight * mentalHealthFactor;
+            totalWeight += item.currentWeight;
         }
 
-        float totalWeight = sourceList.Sum(item => item.currentWeight);
         for (int i = 0; i < itemsToSelect; i++)
         {
+            if (sourceList.Count == 0) break;
+
             float randomValue = UnityEngine.Random.Range(0f, totalWeight);
             float cumulativeWeight = 0f;
-            foreach (var item in sourceList)
+
+            for (int j = 0; j < sourceList.Count; j++)
             {
-                cumulativeWeight += item.currentWeight;
+                cumulativeWeight += sourceList[j].currentWeight;
                 if (randomValue <= cumulativeWeight)
                 {
-                    result.Add(item);
-                    totalWeight -= item.currentWeight;
-                    sourceList.Remove(item);
+                    result.Add(sourceList[j]);
+                    totalWeight -= sourceList[j].currentWeight;
+                    sourceList.RemoveAt(j);
                     break;
                 }
             }
         }
+
         return result;
     }
 
-    // 성공 엔딩 씬을 로드하는 새로운 메서드
+    // 성공 엔딩 씬을 로드하는 메서드
     private void LoadSuccessEndingScene()
     {
         Debug.Log("모든 이미지를 성공적으로 보여주었습니다. 성공 엔딩으로 이동합니다.");
         SceneManager.LoadScene("SuccessEndingScene");
     }
 
+    // 테스트용 메서드
     [ContextMenu("test")]
     public void abcTest()
     {

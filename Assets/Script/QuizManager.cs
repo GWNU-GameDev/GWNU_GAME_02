@@ -23,7 +23,6 @@ public class QuizManager : MonoBehaviour
     private const string DAMAGE_SOUND_EVENT = "event:/Damage"; // 데미지 사운드 이벤트 경로
     private const string STEP_SOUND_EVENT = "event:/StepSound"; // 발소리 사운드 이벤트 경로
 
-    private float previousTimeScale; // 이전 타임스케일 저장
     private int incorrectAnswers = 0; // 틀린 답변 수
 
     private void Awake()
@@ -61,10 +60,6 @@ public class QuizManager : MonoBehaviour
         quizActive = true;
 
         quizPanel.SetActive(true);
-        if (quizPanel != null)
-        {
-            quizPanel.SetActive(true);
-        }
 
         // 발소리 재생
         if (SoundManager.Instance != null)
@@ -76,14 +71,13 @@ public class QuizManager : MonoBehaviour
             Debug.LogWarning("SoundManager 인스턴스를 찾을 수 없습니다. 제대로 초기화되었는지 확인하세요.");
         }
 
-        // 현재 TimeScale 저장 후 0으로 설정
-        previousTimeScale = Time.timeScale;
-        Time.timeScale = 0f;
+        // 퀴즈 시작 시 면역 상태 시작
+        MentalHealthManager.Instance.StartImmunity();
 
         SetNextQuiz();
         remainingTime = 20f;
         timerCoroutine = StartCoroutine(StartTimer());
-        Debug.Log("퀴즈를 시작합니다. 20초 안에 3개의 문제를 풀어주세요.");
+        Debug.Log("퀴즈를 시작합니다. 20초 안에 문제를 풀어주세요.");
     }
 
     // 랜덤 퀴즈 아이템 선택
@@ -170,8 +164,8 @@ public class QuizManager : MonoBehaviour
             StopCoroutine(timerCoroutine);
         }
 
-        // TimeScale을 이전 값으로 복원
-        Time.timeScale = previousTimeScale;
+        // 퀴즈 종료 시 면역 상태 해제
+        MentalHealthManager.Instance.EndImmunity();
 
         // 퀴즈 종료 시 틀린 답변이 있으면 사운드 재생
         if (incorrectAnswers > 0 && SoundManager.Instance != null)
@@ -207,7 +201,7 @@ public class QuizManager : MonoBehaviour
     {
         while (remainingTime > 0 && quizActive)
         {
-            remainingTime -= Time.unscaledDeltaTime;
+            remainingTime -= Time.deltaTime;
             Debug.Log($"남은 시간: {Mathf.CeilToInt(remainingTime)}초");
             yield return null;
         }
@@ -230,6 +224,8 @@ public class QuizManager : MonoBehaviour
     void GameOver()
     {
         Debug.Log("게임 오버!");
+        // 게임 오버 시에도 면역 상태 해제
+        MentalHealthManager.Instance.EndImmunity();
         SceneManager.LoadScene("Strength0EndingScene"); // 게임 오버 시 Strength0EndingScene으로 이동
     }
 

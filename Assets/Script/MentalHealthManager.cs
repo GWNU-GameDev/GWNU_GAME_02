@@ -4,13 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class MentalHealthManager : MonoBehaviour
 {
-    public static MentalHealthManager Instance { get; private set; } // 싱글톤 인스턴스
+    // 싱글톤 인스턴스
+    public static MentalHealthManager Instance { get; private set; }
+
     public int maxMentalHealth = 100;    // 최대 정신 건강 수치
     public int decreaseRate = 1;         // 정신 건강 감소율
     private int currentMentalHealth = 100;// 현재 정신 건강 수치
     private EyesBlinking eyesBlinking;   // 눈 깜빡임 컴포넌트
-    private float immunityDuration = 50f; // 면역 지속 시간
-    private float immunityTimer;         // 면역 타이머
+    private bool isImmune = false;       // 면역 상태 여부
 
     // 엔딩 씬 이름 배열
     private string[] endingScenes = { "Mental0EndingScene_01", "Mental0EndingScene_02" };
@@ -48,8 +49,6 @@ public class MentalHealthManager : MonoBehaviour
         }
         UpdateMentalHealthUI();
         UpdateLevelStatus();
-        immunityTimer = immunityDuration;
-        StartCoroutine(ImmunityCountdown());
         lastSoundPlayedAt = currentMentalHealth;
     }
 
@@ -62,9 +61,9 @@ public class MentalHealthManager : MonoBehaviour
     // 정신 건강 감소 메서드
     public void DecreaseMentalHealth()
     {
-        if (immunityTimer > 0)
+        if (isImmune)
         {
-            Debug.Log("면역 상태 활성화. 정신 건강이 감소하지 않습니다.");
+            Debug.Log("면역 상태 활성화. 멘탈이 감소하지 않습니다.");
             return;
         }
         int previousMentalHealth = currentMentalHealth;
@@ -184,16 +183,18 @@ public class MentalHealthManager : MonoBehaviour
         }
     }
 
-    // 면역 시간 카운트다운
-    private IEnumerator ImmunityCountdown()
+    // 면역 시작 함수
+    public void StartImmunity()
     {
-        while (immunityTimer > 0)
-        {
-            yield return new WaitForSeconds(1f);
-            immunityTimer--;
-            Debug.Log($"남은 면역 시간: {immunityTimer} 초");
-        }
-        Debug.Log("면역 기간이 종료되었습니다. 이제 정신 건강이 감소할 수 있습니다.");
+        isImmune = true;
+        Debug.Log("면역 상태가 시작되었습니다.");
+    }
+
+    // 면역 종료 함수
+    public void EndImmunity()
+    {
+        isImmune = false;
+        Debug.Log("면역 상태가 종료되었습니다.");
     }
 
     // 랜덤 엔딩 씬 로드
