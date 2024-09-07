@@ -1,0 +1,594 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &299135670070446191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7979690654827241975}
+  - component: {fileID: 7178299343250783444}
+  m_Layer: 0
+  m_Name: ImageManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7979690654827241975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299135670070446191}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.1891003, y: -4.0294394, z: 6.848732}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7178299343250783444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299135670070446191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee911852d67c4606b0a209360fe81dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelImage: {fileID: 0}
+  changeInterval: 10
+  imageQuizItems:
+  - image: {fileID: 21300000, guid: 81dfbf86576cc4cbe9e8858a87b2e3ba, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uD30C\uB791"
+    wrongAnswers:
+    - "\uBE68\uAC15"
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: edc5be386421240f1a3f54dd06e05768, type: 3}
+    question: "\uC5EC\uC131\uC740 \uC5B4\uB5A4\uC0C9\uC758 \uB9BD\uC2A4\uD2F1\uC744
+      \uBC14\uB974\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uBD89\uC740\uC0C9"
+    wrongAnswers:
+    - "\uAC08\uC0C9"
+    - "\uC790\uC8FC\uC0C9"
+    - "\uD30C\uB791\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 2392f50f053fc457f9940ecba61adf62, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uBE68\uAC15"
+    wrongAnswers:
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: a6888eb4409964467879b1597d7f6189, type: 3}
+    question: "\uB0A8\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uD68C\uC0C9"
+    wrongAnswers:
+    - "\uD30C\uB791 \uD30C\uB791 \uD30C\uB791 \uD30C\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791 \uAC80\uC815 \uAC80\uC815 "
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: b0e3b4c59425449e1bc148b347fdd6fb, type: 3}
+    question: "\uC544\uC774\uB294 \uBB34\uC2A8\uC0C9\uC758 \uBA38\uB9AC\uCE74\uB77D\uC744
+      \uAC00\uC9C0\uACE0 \uC788\uB098\uC694"
+    correctAnswer: "\uAC80\uC815\uC0C9"
+    wrongAnswers:
+    - "\uAE08\uC0C9"
+    - "\uBD89\uC740\uC0C9"
+    - "\uD68C\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: bc28061cb10b74618852beb774650e76, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uBA38\uB9AC\uCE74\uB77D\uC744
+      \uAC00\uC9C0\uACE0 \uC788\uB098\uC694"
+    correctAnswer: "\uAE08\uC0C9"
+    wrongAnswers:
+    - "\uBE68\uAC15"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 183eb63379d414e8e81de9c6b6610369, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uD68C\uC0C9"
+    wrongAnswers:
+    - "\uBE68\uAC15"
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 7c85ce07d426c4693ae9fe12daa4daf8, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uD30C\uB791"
+    wrongAnswers:
+    - "\uBE68\uAC15"
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: f860152ee77294d949e00d28d4a3c831, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uBA38\uB9AC\uCE74\uB77D\uC744
+      \uAC00\uC9C0\uACE0 \uC788\uB098\uC694"
+    correctAnswer: "\uAC08\uC0C9"
+    wrongAnswers:
+    - "\uBE68\uAC15"
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: b9ba6130a7fa04343a94edb9adffd524, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uC790\uC8FC"
+    wrongAnswers:
+    - "\uBE68\uAC15"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 4e8d68056b9d04386be2727a87257377, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uCCAD\uB85D"
+    wrongAnswers:
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 0530646cc6dc0431dbb39e01d3d6e90f, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uAC80\uC815"
+    wrongAnswers:
+    - "\uCCAD\uB85D"
+    - "\uB178\uB791"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 6d77281b3aa484fb6b443dcef4397c00, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB9BD\uC2A4\uD2F1\uC744
+      \uBC14\uB974\uACE0 \uC788\uB098\uC694"
+    correctAnswer: "\uBD84\uD64D"
+    wrongAnswers:
+    - "\uCCAD\uB85D"
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 125279bb944694efb82a2ac7df395d22, type: 3}
+    question: "\uB0A8\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uB0A8\uC0C9"
+    wrongAnswers:
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: e055f5abbee094eb1ab7078a153a35a8, type: 3}
+    question: "\uB0A8\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uBA38\uB9AC\uCE74\uB77D\uC744
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uAC08\uC0C9"
+    wrongAnswers:
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: a517c8e211ba84f10a1497c2e6595a19, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uAC80"
+    wrongAnswers:
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 1a445ca217595400f9bc98a622d40a96, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB9BD\uC2A4\uD2F1\uC744
+      \uAC00\uC9C0\uACE0 \uC788\uB098\uC694"
+    correctAnswer: "\uBD84\uD64D"
+    wrongAnswers:
+    - "\uCCAD\uB85D"
+    - "\uB178\uB791"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 80dd1012ce9af428fb52f52d2fe50f07, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8 \uADC0\uAC78\uC774\uB97C \uAC00\uC9C0\uACE0
+      \uC788\uB098\uC694"
+    correctAnswer: "\uC9C4\uC8FC"
+    wrongAnswers:
+    - "\uC0AC\uD30C\uC774\uC5B4"
+    - "\uC5D0\uBA54\uB784\uB4DC"
+    - "\uB8E8\uBE44"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 61b1f7ec2652c4df787b5d33dd226cb7, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uBA38\uB9AC\uCE74\uB77D\uC744
+      \uC785\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uAC80\uC815"
+    wrongAnswers:
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: fb0ce9fe12aaa48cf8d80bf11363eb98, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC548\uACBD\uC744 \uC4F0\uACE0
+      \uC788\uB098\uC694 "
+    correctAnswer: "\uAC08\uC0C9"
+    wrongAnswers:
+    - "\uBCF4\uB77C"
+    - "\uB178\uB791"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: e0fffc70b4dfb2e4ba5a2707e9f10dd1, type: 3}
+    question: "\uC544\uC774\uB294 \uBB34\uC2A8\uC0C9\uC758 \uBA38\uB9AC\uCE74\uB77D\uC744
+      \uAC00\uC9C0\uACE0 \uC788\uB098\uC694"
+    correctAnswer: "\uAC80\uC815"
+    wrongAnswers:
+    - "\uB178\uB791"
+    - "\uAC08\uC0C9"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: ce548d54f55f38a4caa6f3322c5b758b, type: 3}
+    question: "\uB0A8\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC774\uBE68\uC744 \uAC00\uC9C0\uACE0
+      \uC788\uB098\uC694"
+    correctAnswer: "\uD770\uC0C9"
+    wrongAnswers:
+    - "\uCCAD\uB85D"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 170012a470d522e4183e3fb6bdae08d9, type: 3}
+    question: "\uB0A8\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uAC08\uC0C9"
+    wrongAnswers:
+    - "\uBE68\uAC15"
+    - "\uBE68\uAC15"
+    - "\uBE68\uAC15"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 45649171380212946abdcf5097576d34, type: 3}
+    question: "\uADF8\uAC83\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uBCF4\uB77C"
+    wrongAnswers:
+    - "\uCCAD\uB85D"
+    - "\uB178\uB791"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 614c607fcc3f66249a4fbf6be33f03c5, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uC785\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uBE68\uAC15"
+    wrongAnswers:
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 6bc382b0276893e48abc03f3a0c8f4a4, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uC785\uC220\uC744 \uC785\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uBE68\uAC15"
+    wrongAnswers:
+    - "\uCCAD\uB85D"
+    - "\uB178\uB791"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 876fc7ffdbcd6c94399aa360b1741b0a, type: 3}
+    question: "\uC544\uC774\uB294 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694? "
+    correctAnswer: 40413
+    wrongAnswers:
+    - "\uAC08\uC0C9"
+    - "\uAC80\uAC80\uC815\uC0C9"
+    - "\uCD08\uB85D"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: c3bc7b0840237154e9ae775cc802f12e, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uAC00\uC9C0\uACE0 \uC788\uB098\uC694 "
+    correctAnswer: "\uBE68"
+    wrongAnswers:
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 657e18c1f8415b04e824a9d04a7474e1, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uC785\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uBE68\uAC15"
+    wrongAnswers:
+    - "\uBCF4\uB77C"
+    - "\uB178\uB791"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 6da3ae52f7a95d44785346c5a8d8e462, type: 3}
+    question: "\uC544\uC774\uB294 \uBB34\uC2A8\uC0C9\uC758 \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uD30C\uB791"
+    wrongAnswers:
+    - "\uAC80\uC815"
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: b159e1ee6bbee5b419b5e7fdc8f5a42c, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uAC00\uC9C0\uACE0 \uC788\uB098\uC694 "
+    correctAnswer: "\uD30C\uB791"
+    wrongAnswers:
+    - "\uBCF4\uB77C"
+    - "\uB178\uB791"
+    - "\uC8FC\uD669"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 871808c9491fb6747919104e6c89953c, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uBE68\uAC15"
+    wrongAnswers:
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: c7845a6374497694c9694418fd334420, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB9BD\uC2A4\uD2F1\uC744
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uBE68\uAC15"
+    wrongAnswers:
+    - "\uC8FC\uD669"
+    - "\uB178\uB791"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 719394549c85e7f43bb09223a507a053, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uBA38\uB9AC\uC0C9\uC744
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uAE08\uBC1C"
+    wrongAnswers:
+    - "\uBE68\uAC15"
+    - "\uC8FC\uD669"
+    - "\uD751\uBC1C"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 98acba889a84a9b49a52d315a3a7bc36, type: 3}
+    question: "\uB0A8\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB9BD\uC2A4\uD2F1\uC744
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uBE68\uAC15"
+    wrongAnswers:
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uAC80\uC815"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 095e2c51d97fe924f9944e0a3cb9760c, type: 3}
+    question: "\uC544\uC774\uB294 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uAC80\uC815"
+    wrongAnswers:
+    - "\uBE68\uAC15"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 2cb65ca7e4f5ce94eb3a54e8a6b5756f, type: 3}
+    question: "\uB0A8\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uBA38\uB9AC\uCE74\uB77D\uC744
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uAC80\uC815"
+    wrongAnswers:
+    - "\uB178\uB791"
+    - "\uAE08\uBC1C"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: ee3bb062005fc5f45b283f8520127b41, type: 3}
+    question: "\uC544\uC774\uB294 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uAC80\uC815"
+    wrongAnswers:
+    - "\uBE68\uAC15"
+    - "\uBE68\uAC15"
+    - "\uBE68\uAC15"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 0f2fdfffb1195ed4d8b8c36820d591e9, type: 3}
+    question: "\uB0A8\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB208\uB3D9\uC790\uB97C
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uBE68\uAC15"
+    wrongAnswers:
+    - "\uB178\uB791"
+    - "\uCD08\uB85D"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 33f58c46f74f57448b258f5be87b6ccd, type: 3}
+    question: "\uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758 \uB9BD\uC2A4\uD2F1\uC744
+      \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uBD84\uD64D"
+    wrongAnswers:
+    - "\uAC80\uC815"
+    - "\uB178\uB791"
+    - "\uD30C\uB791"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  tutorialImages:
+  - {fileID: 21300000, guid: 86cca0124c3c58e40b07a3381394bd49, type: 3}
+  - {fileID: 21300000, guid: c12c92168fb55cb4787329d072967db8, type: 3}
+  - {fileID: 21300000, guid: 929b6f27d160f3f4eb1deb39976081f1, type: 3}
+  - {fileID: 21300000, guid: 7f2ee51cdbe2f0f4f8f5bd6e09cbbb3d, type: 3}
+  - {fileID: 21300000, guid: 28a67b97a77d17948ae43fd7c8b69345, type: 3}
+  tutorialImageDuration: 10
+  tutorialQuizItems:
+  - image: {fileID: 21300000, guid: 9822616e342e4a04ca30e415c72e7457, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uB0A8\uC790\uB294 \uBB34\uC2A8\uC0C9\uC758
+      \uBAA8\uC790\uB97C \uC4F0\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uD68C\uC0C9 "
+    wrongAnswers:
+    - "\uBCF4\uB77C\uC0C9"
+    - "\uD30C\uB791\uC0C9"
+    - "\uC8FC\uD669\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 6451c062933a1ac4ab4d2b37f47cbb69, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758
+      \uBA38\uB9AC\uCE74\uB77D\uC744 \uAC00\uC9C0\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uAC08\uC0C9"
+    wrongAnswers:
+    - "\uAC80\uC815\uC0C9"
+    - "\uD68C\uC0C9"
+    - "\uBCF4\uB77C\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 3723159b8699fa2429e0f4466c8d9a8f, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758
+      \uB208\uB3D9\uC790\uB97C \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uD30C\uB791\uC0C9"
+    wrongAnswers:
+    - "\uAC80\uC815\uC0C9"
+    - "\uD68C\uC0C9"
+    - "\uAC08\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 539fc241b1e3aeb4a93bfa4b7fc198c6, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uC5EC\uC131\uC758 \uC548\uACBD\uC740 \uBB34\uC2A8\uC0C9\uC778\uAC00\uC694"
+    correctAnswer: "\uAC80\uC815\uC0C9"
+    wrongAnswers:
+    - "\uB178\uB791\uC0C9"
+    - "\uC8FC\uD669\uC0C9"
+    - "\uBE68\uAC04\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 6fd0e919235846d44901d30321eee0ae, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758
+      \uBA38\uB9AC\uCE74\uB77D\uC744 \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uAE08\uC0C9"
+    wrongAnswers:
+    - "\uAC80\uC815\uC0C9"
+    - "\uD68C\uC0C9"
+    - "\uD30C\uB791\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 3e2a7a30bda7df443976bf92d6af1a05, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758
+      \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uB0A8\uC0C9"
+    wrongAnswers:
+    - "\uAC80\uC815\uC0C9"
+    - "\uBE68\uAC15\uC0C9"
+    - "\uD68C\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 0a5af9d0ff9c9294f8780c9b1917eea5, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758
+      \uB208\uB3D9\uC790\uB97C \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uD30C\uB791\uC0C9"
+    wrongAnswers:
+    - "\uAC80\uC815\uC0C9"
+    - "\uD68C\uC0C9"
+    - "\uAC08\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 9b187225c56c5b547b0ab766bd1975c9, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uB0A8\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758
+      \uBA38\uB9AC\uCE74\uB77D\uC744 \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uAC80\uC815\uC0C9"
+    wrongAnswers:
+    - "\uD30C\uB791\uC0C9"
+    - "\uBE68\uAC15\uC0C9"
+    - "\uAC08\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: eb0d8726025006f44be53551e10104da, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758
+      \uB208\uB3D9\uC790\uB97C \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uCD08\uB85D\uC0C9"
+    wrongAnswers:
+    - "\uAC80\uC815\uC0C9"
+    - "\uAC08\uC0C9"
+    - "\uD68C\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 5bfd3653b01d5bc4bb6487813e53dc99, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uB0A8\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758
+      \uBA38\uB9AC\uCE74\uB77D\uC744 \uAC00\uC9C0\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uAC80\uC815\uC0C9"
+    wrongAnswers:
+    - "\uAE08\uC0C9"
+    - "\uAC08\uC0C9"
+    - "\uD68C\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
