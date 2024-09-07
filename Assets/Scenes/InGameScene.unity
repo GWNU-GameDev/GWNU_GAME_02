@@ -1735,6 +1735,116 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7f2ee51cdbe2f0f4f8f5bd6e09cbbb3d, type: 3}
   - {fileID: 21300000, guid: 28a67b97a77d17948ae43fd7c8b69345, type: 3}
   tutorialImageDuration: 10
+  tutorialQuizItems:
+  - image: {fileID: 21300000, guid: 9822616e342e4a04ca30e415c72e7457, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uB0A8\uC790\uB294 \uBB34\uC2A8\uC0C9\uC758
+      \uBAA8\uC790\uB97C \uC4F0\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uD68C\uC0C9 "
+    wrongAnswers:
+    - "\uBCF4\uB77C\uC0C9"
+    - "\uD30C\uB791\uC0C9"
+    - "\uC8FC\uD669\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 6451c062933a1ac4ab4d2b37f47cbb69, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758
+      \uBA38\uB9AC\uCE74\uB77D\uC744 \uAC00\uC9C0\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uAC08\uC0C9"
+    wrongAnswers:
+    - "\uAC80\uC815\uC0C9"
+    - "\uD68C\uC0C9"
+    - "\uBCF4\uB77C\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 3723159b8699fa2429e0f4466c8d9a8f, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758
+      \uB208\uB3D9\uC790\uB97C \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uD30C\uB791\uC0C9"
+    wrongAnswers:
+    - "\uAC80\uC815\uC0C9"
+    - "\uD68C\uC0C9"
+    - "\uAC08\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 539fc241b1e3aeb4a93bfa4b7fc198c6, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uC5EC\uC131\uC758 \uC548\uACBD\uC740 \uBB34\uC2A8\uC0C9\uC778\uAC00\uC694"
+    correctAnswer: "\uAC80\uC815\uC0C9"
+    wrongAnswers:
+    - "\uB178\uB791\uC0C9"
+    - "\uC8FC\uD669\uC0C9"
+    - "\uBE68\uAC04\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 6fd0e919235846d44901d30321eee0ae, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758
+      \uBA38\uB9AC\uCE74\uB77D\uC744 \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uAE08\uC0C9"
+    wrongAnswers:
+    - "\uAC80\uC815\uC0C9"
+    - "\uD68C\uC0C9"
+    - "\uD30C\uB791\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 3e2a7a30bda7df443976bf92d6af1a05, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758
+      \uC637\uC744 \uC785\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uB0A8\uC0C9"
+    wrongAnswers:
+    - "\uAC80\uC815\uC0C9"
+    - "\uBE68\uAC15\uC0C9"
+    - "\uD68C\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 0a5af9d0ff9c9294f8780c9b1917eea5, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758
+      \uB208\uB3D9\uC790\uB97C \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uD30C\uB791\uC0C9"
+    wrongAnswers:
+    - "\uAC80\uC815\uC0C9"
+    - "\uD68C\uC0C9"
+    - "\uAC08\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 9b187225c56c5b547b0ab766bd1975c9, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uB0A8\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758
+      \uBA38\uB9AC\uCE74\uB77D\uC744 \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uAC80\uC815\uC0C9"
+    wrongAnswers:
+    - "\uD30C\uB791\uC0C9"
+    - "\uBE68\uAC15\uC0C9"
+    - "\uAC08\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: eb0d8726025006f44be53551e10104da, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uC5EC\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758
+      \uB208\uB3D9\uC790\uB97C \uAC00\uC9C0\uACE0\uC788\uB098\uC694"
+    correctAnswer: "\uCD08\uB85D\uC0C9"
+    wrongAnswers:
+    - "\uAC80\uC815\uC0C9"
+    - "\uAC08\uC0C9"
+    - "\uD68C\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
+  - image: {fileID: 21300000, guid: 5bfd3653b01d5bc4bb6487813e53dc99, type: 3}
+    question: "\uC0AC\uC9C4\uC18D\uC758 \uB0A8\uC131\uC740 \uBB34\uC2A8\uC0C9\uC758
+      \uBA38\uB9AC\uCE74\uB77D\uC744 \uAC00\uC9C0\uACE0\uC788\uB098\uC694 "
+    correctAnswer: "\uAC80\uC815\uC0C9"
+    wrongAnswers:
+    - "\uAE08\uC0C9"
+    - "\uAC08\uC0C9"
+    - "\uD68C\uC0C9"
+    baseWeight: 0
+    currentWeight: 0
+    sequenceNumber: 0
 --- !u!4 &781732177
 Transform:
   m_ObjectHideFlags: 0

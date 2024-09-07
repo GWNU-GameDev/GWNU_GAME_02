@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+// 퀴즈 아이템을 위한 클래스
 [System.Serializable]
 public class WeightedImageQuizItem
 {
@@ -20,6 +21,7 @@ public class WeightedImageQuizItem
 
 public class ImageManager : MonoBehaviour
 {
+    // 싱글톤 패턴을 위한 인스턴스
     public static ImageManager Instance { get; private set; }
 
     [SerializeField] private Image panelImage;     // 이미지를 표시할 UI Image 컴포넌트
@@ -27,19 +29,19 @@ public class ImageManager : MonoBehaviour
     [SerializeField] private List<WeightedImageQuizItem> imageQuizItems = new List<WeightedImageQuizItem>();  // 퀴즈 아이템 리스트
     [SerializeField] private List<Sprite> tutorialImages = new List<Sprite>();  // 튜토리얼 이미지 리스트
     [SerializeField] private float tutorialImageDuration = 10f;  // 튜토리얼 이미지 표시 시간
+    [SerializeField] private List<WeightedImageQuizItem> tutorialQuizItems = new List<WeightedImageQuizItem>();  // 튜토리얼 퀴즈 아이템 리스트
 
     private List<WeightedImageQuizItem> unusedItems;   // 아직 사용되지 않은 퀴즈 아이템
     private int imagesShownCount = 0;                  // 지금까지 보여준 이미지 수
-    private const int ImagesPerRound = 1;              // 라운드당 보여줄 이미지 수
-    private List<WeightedImageQuizItem> shownImages = new List<WeightedImageQuizItem>();  // 보여진 이미지들을 순서대로 저장할 리스트
+    private const int TutorialQuizCount = 5;           // 튜토리얼 퀴즈 개수
+    private List<WeightedImageQuizItem> shownImages = new List<WeightedImageQuizItem>();  // 보여진 이미지들을 저장할 리스트
 
+    // 싱글톤 패턴 구현
     private void Awake()
     {
-        // 싱글톤 패턴 구현
         if (Instance == null)
         {
             Instance = this;
-            // DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -47,11 +49,16 @@ public class ImageManager : MonoBehaviour
         }
     }
 
+    // 초기화
     private void Start()
     {
-        if (imageQuizItems.Count > 0)
+        if (imageQuizItems.Count > 0 && tutorialQuizItems.Count > 0)
         {
+            // 이미지 퀴즈 아이템을 섞습니다.
             unusedItems = new List<WeightedImageQuizItem>(imageQuizItems);
+            ShuffleList(unusedItems);
+            // 튜토리얼 퀴즈 아이템도 섞습니다.
+            ShuffleList(tutorialQuizItems);
             ResetWeights();
             if (panelImage != null)
             {
@@ -69,7 +76,21 @@ public class ImageManager : MonoBehaviour
             {
                 panelImage.gameObject.SetActive(false);
             }
-            Debug.LogWarning("Image quiz item list is empty.");
+            Debug.LogWarning("Image quiz item list or tutorial quiz item list is empty.");
+        }
+    }
+
+    // 리스트를 섞는 메서드
+    private void ShuffleList<T>(List<T> list)
+    {
+        int n = list.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = UnityEngine.Random.Range(0, n + 1);
+            T value = list[k];
+            list[k] = list[n];
+            list[n] = value;
         }
     }
 
@@ -88,14 +109,20 @@ public class ImageManager : MonoBehaviour
         // 튜토리얼 시작 전 면역 시작
         MentalHealthManager.Instance.StartImmunity();
 
+        // 튜토리얼 이미지 보여주기
         yield return StartCoroutine(ShowTutorialImages());
 
         // 튜토리얼 종료 후 면역 해제
         MentalHealthManager.Instance.EndImmunity();
 
-        while (imagesShownCount < imageQuizItems.Count)
+        // 튜토리얼 퀴즈 진행
+        int tutorialQuizCount = Mathf.Min(TutorialQuizCount, tutorialQuizItems.Count);
+        yield return StartCoroutine(ShowTutorialQuiz(tutorialQuizItems.Take(tutorialQuizCount).ToList()));
+
+        // 본 게임 진행
+        while (unusedItems.Count > 0)
         {
-            List<WeightedImageQuizItem> roundItems = GetRandomWeightedItems(ImagesPerRound);
+            List<WeightedImageQuizItem> roundItems = GetRandomWeightedItems(1);
             yield return StartCoroutine(ShowImages(roundItems));
 
             if (QuizManager.Instance != null)
@@ -110,14 +137,10 @@ public class ImageManager : MonoBehaviour
             }
 
             shownImages.Clear();
-
-            // 모든 이미지를 사용했는지 확인
-            if (imagesShownCount >= imageQuizItems.Count)
-            {
-                LoadSuccessEndingScene();
-                yield break;
-            }
         }
+
+        // 모든 이미지를 사용했을 때
+        LoadSuccessEndingScene();
     }
 
     // 튜토리얼 이미지 표시
@@ -133,6 +156,37 @@ public class ImageManager : MonoBehaviour
             else
             {
                 Debug.LogWarning("Tutorial image is missing.");
+            }
+        }
+    }
+
+    // 튜토리얼 퀴즈 진행
+    private IEnumerator ShowTutorialQuiz(List<WeightedImageQuizItem> items)
+    {
+        foreach (var item in items)
+        {
+            if (panelImage != null && item.image != null)
+            {
+                panelImage.sprite = item.image;
+                yield return new WaitForSeconds(changeInterval);
+
+                shownImages.Clear();
+                shownImages.Add(item);
+
+                if (QuizManager.Instance != null)
+                {
+                    QuizManager.Instance.StartQuiz(shownImages);
+                    yield return new WaitUntil(() => !QuizManager.Instance.IsQuizActive());
+                }
+                else
+                {
+                    Debug.LogError("QuizManager instance is null.");
+                    yield break;
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Image is missing for a tutorial quiz item.");
             }
         }
     }
@@ -155,17 +209,13 @@ public class ImageManager : MonoBehaviour
             }
             imagesShownCount++;
             yield return new WaitForSeconds(changeInterval);
-            if (imagesShownCount >= imageQuizItems.Count)
-            {
-                break;
-            }
         }
     }
 
     // 랜덤 가중치 아이템 선택
     private List<WeightedImageQuizItem> GetRandomWeightedItems(int count, List<WeightedImageQuizItem> sourceList = null)
     {
-        sourceList = sourceList ?? new List<WeightedImageQuizItem>(unusedItems);
+        sourceList = sourceList ?? unusedItems;
         List<WeightedImageQuizItem> result = new List<WeightedImageQuizItem>();
         int itemsToSelect = Mathf.Min(count, sourceList.Count);
 
